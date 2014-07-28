@@ -5,6 +5,8 @@ Walls.io API Documentation
 
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
 
+
+
 All endpoints, if called with a `GET` request, support the following response formats:
 - **JSON**: Expample request: `api/posts.json`
 - **XML**: Example request: `api/posts.xml`
@@ -200,7 +202,11 @@ Returns a single post, specified by its Walls.io post id.
 }
 ```
 
+## Further info
+For example uses of the API, see the [Walls.io JavaScript SDK]
+
 
 
 [Twitter API docs]:https://dev.twitter.com/docs/entities
 [FAQs]:https://github.com/DieSocialisten/Walls.io-API-Docs/blob/master/FAQ.md
+[Walls.io JavaScript SDK]:https://github.com/DieSocialisten/Walls.io-JS-SDK/
