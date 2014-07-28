@@ -31,6 +31,7 @@ All responses from the `/posts` endpoints share the same set of fields:
  - `"tumblr"`
  - `"reddit"`
  - `"rss"`
+- `external_post_id`: The post's id in the social network it originated from.
 - `external_image`: The user's profile pic.
 - `external_name`: The user's screen name or handle.
 - `external_fullname`: Some networks offer a "full name" or "display name" field in addition to the handle. This field contains this display name.
