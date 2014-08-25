@@ -72,7 +72,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 
 ```json
 {
-  "status":"SUCCESS",
+  "status":"success",
   "data":[
     {
       "id":"146670",
@@ -90,7 +90,10 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "created":"2014-07-10 14:35:38",
       "modified":"2014-07-10 14:35:39",
       "permalink":"https:\/\/twitter.com\/LOWERERWICK\/status\/487213557436518400",
-      "userlink":"https:\/\/www.twitter.com\/LOWERERWICK"
+      "userlink":"https:\/\/www.twitter.com\/LOWERERWICK",
+      "location": "Knottingley",
+      "latitude": "53.69547100000000",
+      "longitude": "-1.25397500000000"
     },
     {
       "id":"146661",
@@ -108,7 +111,10 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "created":"2014-07-10 14:34:57",
       "modified":"2014-07-10 14:34:57",
       "permalink":"https:\/\/twitter.com\/TakeMe2TheRyan\/status\/487213383762989056",
-      "userlink":"https:\/\/www.twitter.com\/TakeMe2TheRyan"
+      "userlink":"https:\/\/www.twitter.com\/TakeMe2TheRyan",
+      "location": null,
+      "latitude": null,
+      "longitude": null
     },
     ...
   }
@@ -136,28 +142,30 @@ This endpoint should be used if you need to know about all updates to existing p
 
 ```json
 {
-  "status":"SUCCESS",
-  "current_time":1404996723,
+  "status":"success",
+  "current_time":1408954107,
   "count":50,
   "data":[
     {
-      "id":"17824337",
-      "comment":"I'm a happy girl! Here comes the long weekend! #starbucks #yums #simplepleasures http:\/\/t.co\/2dqTPO1J4Y",
-      "type":"twitter",
-      "external_image":"http:\/\/pbs.twimg.com\/profile_images\/440170681599152129\/gU-hicOp_normal.jpeg",
-      "external_name":"AnchorintheS",
-      "external_fullname":"Alison",
-      "external_user_id":null,
-      "post_image":"https:\/\/instagram.com\/p\/p_xmwIhtk8\/media\/?size=l",
-      "post_link":"https:\/\/twitter.com\/AnchorintheS\/status\/484743321307185152",
-      "twitter_entities":"{\"hashtags\":[{\"text\":\"starbucks\",\"indices\":[47,57]},{\"text\":\"yums\",\"indices\":[58,63]},{\"text\":\"simplepleasures\",\"indices\":[64,80]}],\"trends\":[],\"urls\":[{\"url\":\"http:\\\/\\\/t.co\\\/2dqTPO1J4Y\",\"expanded_url\":\"http:\\\/\\\/instagram.com\\\/p\\\/p_xmwIhtk8\\\/\",\"display_url\":\"instagram.com\\\/p\\\/p_xmwIhtk8\\\/\",\"indices\":[81,103]}],\"user_mentions\":[],\"symbols\":[]}",
-      "twitter_retweet":false,
-      "status":true,
-      "created":"2014-07-03 18:59:48",
-      "modified":"2014-07-03 18:59:49",
-      "is_crosspost":false,
-      "permalink":"https:\/\/twitter.com\/AnchorintheS\/status\/484743321307185152",
-      "userlink":"https:\/\/www.twitter.com\/AnchorintheS"
+      "id": "17181205",
+      "comment": "Oooh, it's a #Venti #Pike kinda day!! Can't even set the alarm \"later\" my internal clock is set.. That & my lovely roommates alarm blasting at 5:30 woke ME up (he's still sleeping).. lol. Bueno, laundry done, off to the gym before a meeting & getting the day started..",
+      "external_fullname": null,
+      "external_image": "http:\/\/images.ak.instagram.com\/profiles\/profile_372993670_75sq_1398301155.jpg",
+      "external_name": "getfitgenes",
+      "external_post_id": "769415235382107591_372993670",
+      "external_user_id": "372993670",
+      "is_crosspost": false,
+      "permalink": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
+      "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/10560907_307861969392635_1595149027_n.jpg",
+      "post_link": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
+      "status": true,
+      "type": "instagram",
+      "userlink": "http:\/\/instagram.com\/getfitgenes",
+      "location": null,
+      "latitude": "25.75100000000000",
+      "longitude": "-80.23633333300000",
+      "created": "2014-07-21 13:17:45",
+      "modified": "2014-07-21 13:19:35"
     },
     ...
   ]
@@ -182,26 +190,32 @@ Returns a single post, specified by its Walls.io post id.
 
 ```json
 {
-    "status": "SUCCESS",
-    "current_time": 1404996936,
-    "data": {
-        "id": "17824236",
-        "comment": "Celebrating, I made the U13 3x3 BC Summer Games Team!?",
-        "type": "instagram",
-        "external_image": "http:\/\/photos-c.ak.instagram.com\/hphotos-ak-xfa1\/917152_867472236614002_2112064981_a.jpg",
-        "external_name": "kenzie_perry12",
-        "external_fullname": null,
-        "external_user_id": "231099956",
-        "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfa1\/t51.2885-15\/914416_490993951032613_435314366_n.jpg",
-        "post_link": "http:\/\/instagram.com\/p\/phY4abTXc0\/",
-        "twitter_entities": null,
-        "twitter_retweet": false,
-        "status": false,
-        "created": "2014-06-21 23:46:32",
-        "modified": "2014-07-03 18:56:43",
-        "permalink": "http:\/\/instagram.com\/p\/phY4abTXc0\/",
-        "userlink": "http:\/\/instagram.com\/kenzie_perry12"
-    }
+  "status": "success",
+  "query": {
+    "postId": 17181206
+  },
+  "current_time": 1408954568,
+  "data": {
+    "id": "17181206",
+    "comment": "A heart on my cup and a wink! #ivepulled #guiltypleasure #starbucks",
+    "type": "instagram",
+    "external_image": "http:\/\/photos-f.ak.instagram.com\/hphotos-ak-xpf1\/10369543_654365497965469_839887771_a.jpg",
+    "external_name": "mferrari1",
+    "external_fullname": null,
+    "external_user_id": "22059933",
+    "post_image": "http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/10499125_748994368486318_763693636_n.jpg",
+    "post_link": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
+    "twitter_entities": null,
+    "twitter_retweet": false,
+    "status": true,
+    "location": null,
+    "latitude": "51.48247833300000",
+    "longitude": "-0.00957778300000",
+    "created": "2014-07-21 13:19:25",
+    "modified": "2014-07-21 13:19:35",
+    "permalink": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
+    "userlink": "http:\/\/instagram.com\/mferrari1"
+  }
 }
 ```
 
