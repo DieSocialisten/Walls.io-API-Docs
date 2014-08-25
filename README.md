@@ -48,6 +48,9 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `modified`: Ths date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io.
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `userlink`: A link to the user's profile on the social network the post was posted to.
+- `location`: The name of the geographic position this post was created at, or `null` if none was set.
+- `latitude`: The latitude this post was created at, or `null` if the position was not set.
+- `longitude`: The longitude this post was created at, or `null` if the position was not set.
 
 
 ### GET api/posts.*{format}*
