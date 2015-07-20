@@ -58,7 +58,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 Returns a list of posts for a wall. The wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
-`GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>&fields=id,comment,type&limit=10`
+`GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -67,6 +67,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 - `before`: A post id used for pagination of results. You will only receive posts that have a lower ID than this.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 #### Example response
 
@@ -137,6 +138,7 @@ This endpoint should be used if you need to know about all updates to existing p
 - `until`: A UNIX timestamp used for pagination of results. You will only receive posts that have been updated before this date and time.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 #### Example response
 
