@@ -3,6 +3,18 @@
 Walls.io API Documentation
 ==========================
 
+## Contents
+- [Posts Endpoints](#posts-endpoints)
+  - [Common Post fields](#common-post-fields)
+  - [GET api/posts.*{format}*](#get-apipostsformat)
+  - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
+  - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
+  - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
+  - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
+- [Further info](#further-info)
+
+
+
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
 
 
@@ -218,6 +230,68 @@ Returns a single post, specified by its Walls.io post id.
     "modified": "2014-07-21 13:19:35",
     "permalink": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
     "userlink": "http:\/\/instagram.com\/mferrari1"
+  }
+}
+```
+
+
+### GET api/analytics/posts.*{format}*
+
+Returns the number of posts per social networks on your wall. Also returns the total number of posts.
+
+Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) are ignored.
+
+#### Example request
+`GET https://walls.io/api/analytics/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "data": {
+    "twitter": 463,
+    "instagram": 395,
+    "flickr": 125,
+    "facebook": 83,
+    "youtube": 72,
+    "googleplus": 60,
+    "total": 1198
+  }
+}
+```
+
+
+### GET api/analytics/users.*{format}*
+
+Returns the number of unique users that have posted on your wall, grouped by social network. Also returns the total number of unique users.
+
+Users who only have inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) on your wall are ignored.
+
+#### Example request
+`GET https://walls.io/api/analytics/users.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "data": {
+    "twitter": 425,
+    "instagram": 386,
+    "facebook": 83,
+    "youtube": 49,
+    "googleplus": 35,
+    "flickr": 24,
+    "total": 1002
   }
 }
 ```
