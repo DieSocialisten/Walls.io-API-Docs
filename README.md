@@ -222,6 +222,37 @@ Returns a single post, specified by its Walls.io post id.
 }
 ```
 
+
+### GET api/analytics/posts.*{format}*
+
+Returns the number of posts per social networks on your wall. Also returns the total number of posts.
+
+Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) are ignored.
+
+#### Example request
+`GET https://walls.io/api/analytics/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "data": {
+    "twitter": 463,
+    "instagram": 395,
+    "flickr": 125,
+    "facebook": 83,
+    "youtube": 72,
+    "googleplus": 60,
+    "total": 1198
+  }
+}
+```
+
 ## Further info
 For example uses of the API, see the [Walls.io JavaScript SDK]
 
