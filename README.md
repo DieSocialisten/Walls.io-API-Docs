@@ -253,6 +253,37 @@ Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall m
 }
 ```
 
+
+### GET api/analytics/users.*{format}*
+
+Returns the number of unique users that have posted on your wall, grouped by social network. Also returns the total number of unique users.
+
+Users who only have inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) on your wall are ignored.
+
+#### Example request
+`GET https://walls.io/api/analytics/users.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "data": {
+    "twitter": 425,
+    "instagram": 386,
+    "facebook": 83,
+    "youtube": 49,
+    "googleplus": 35,
+    "flickr": 24,
+    "total": 1002
+  }
+}
+```
+
 ## Further info
 For example uses of the API, see the [Walls.io JavaScript SDK]
 
