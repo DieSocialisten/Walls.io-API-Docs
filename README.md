@@ -3,6 +3,18 @@
 Walls.io API Documentation
 ==========================
 
+## Contents
+- [Posts Endpoints](#posts-endpoints)
+  - [Common Post fields](#common-post-fields)
+  - [GET api/posts.*{format}*](#get-apipostsformat)
+  - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
+  - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
+  - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
+  - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
+- [Further info](#further-info)
+
+
+
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
 
 
