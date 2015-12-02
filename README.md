@@ -11,7 +11,6 @@ Walls.io API Documentation
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
-- [Further info](#further-info)
 
 
 
@@ -296,11 +295,6 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 }
 ```
 
-## Further info
-For example uses of the API, see the [Walls.io JavaScript SDK]
-
-
 
 [Twitter API docs]:https://dev.twitter.com/docs/entities
 [FAQs]:https://github.com/DieSocialisten/Walls.io-API-Docs/blob/master/FAQ.md
-[Walls.io JavaScript SDK]:https://github.com/DieSocialisten/Walls.io-JS-SDK/
