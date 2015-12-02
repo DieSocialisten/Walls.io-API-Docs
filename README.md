@@ -11,7 +11,7 @@ Walls.io API Documentation
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
-
+- [Further info](#further-info)
 
 
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
@@ -295,6 +295,12 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 }
 ```
 
+## Further info
+While not part of the API, there is also the possibility to access your Wall's posts via the [Walls.io JavaScript SDK].
+
+Please note that the JavaScript SDK is **not officially part of Walls.io**, so we only offer **limited support** for it. Please contact us if you plan to user the JavaScript SDK in one of your projects!
+
 
 [Twitter API docs]:https://dev.twitter.com/docs/entities
 [FAQs]:https://github.com/DieSocialisten/Walls.io-API-Docs/blob/master/FAQ.md
+[Walls.io JavaScript SDK]:https://github.com/DieSocialisten/Walls.io-JS-SDK/
