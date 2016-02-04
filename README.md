@@ -55,6 +55,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a discription of the Twitter entity format, see the [Twitter API docs].
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
 - `is_crosspost`: If this post was posted to multiple social networks at the same time, all posts that came after the original one contain `true` for this field. The original post contains `false`.
+- `is_highlighted`: `true` if the post has been highlighted by a moderator; `false` otherwise.
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
 - `created`: The date and time when this post was created in the social network it was posted to.
 - `modified`: Ths date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io.
@@ -79,6 +80,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 - `before`: A post id used for pagination of results. You will only receive posts that have a lower ID than this.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 #### Example response
@@ -99,6 +101,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "post_link":"https:\/\/twitter.com\/LOWERERWICK\/status\/487213557436518400",
       "twitter_entities":"{\"hashtags\":[{\"text\":\"Starbucks\",\"indices\":[14,24]},{\"text\":\"feinding\",\"indices\":[27,36]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
       "twitter_retweet":false,
+      "is_highlighted":false,
       "status":true,
       "created":"2014-07-10 14:35:38",
       "modified":"2014-07-10 14:35:39",
@@ -120,6 +123,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "post_link":"https:\/\/twitter.com\/TakeMe2TheRyan\/status\/487213383762989056",
       "twitter_entities":"{\"hashtags\":[{\"text\":\"starbucks\",\"indices\":[13,23]},{\"text\":\"howard\",\"indices\":[35,42]},{\"text\":\"thatsnotmyname\",\"indices\":[46,61]},{\"text\":\"starbucksfail\",\"indices\":[62,76]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
       "twitter_retweet":false,
+      "is_highlighted":false,
       "status":true,
       "created":"2014-07-10 14:34:57",
       "modified":"2014-07-10 14:34:57",
@@ -150,6 +154,7 @@ This endpoint should be used if you need to know about all updates to existing p
 - `until`: A UNIX timestamp used for pagination of results. You will only receive posts that have been updated before this date and time.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 #### Example response
@@ -169,6 +174,7 @@ This endpoint should be used if you need to know about all updates to existing p
       "external_post_id": "769415235382107591_372993670",
       "external_user_id": "372993670",
       "is_crosspost": false,
+      "is_highlighted": false,
       "permalink": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
       "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/10560907_307861969392635_1595149027_n.jpg",
       "post_link": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
@@ -221,6 +227,7 @@ Returns a single post, specified by its Walls.io post id.
     "post_link": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
     "twitter_entities": null,
     "twitter_retweet": false,
+    "is_highlighted": false,
     "status": true,
     "location": null,
     "latitude": "51.48247833300000",
