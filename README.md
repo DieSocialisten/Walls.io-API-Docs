@@ -132,8 +132,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "location": null,
       "latitude": null,
       "longitude": null
-    },
-    ...
+    }
   }
 }
 ```
@@ -186,8 +185,7 @@ This endpoint should be used if you need to know about all updates to existing p
       "longitude": "-80.23633333300000",
       "created": "2014-07-21 13:17:45",
       "modified": "2014-07-21 13:19:35"
-    },
-    ...
+    }
   ]
 }
 ```
