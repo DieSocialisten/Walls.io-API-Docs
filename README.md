@@ -134,7 +134,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "latitude": null,
       "longitude": null
     }
-  }
+  ]
 }
 ```
 
