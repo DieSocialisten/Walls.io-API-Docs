@@ -11,6 +11,7 @@ Walls.io API Documentation
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
+  - [GET api/ads.*{format}*](#get-apiadsformat)
 - [Further info](#further-info)
 
 
@@ -299,6 +300,32 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
   }
 }
 ```
+
+### GET api/ads.*{format}*
+
+Returns a list of ads for a wall. Ads are uploaded and managed in the Walls.io settings are. The wall is determined by the `access_token` that must be passed with the request.
+
+#### Example request
+`GET https://walls.io/api/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+
+#### Example response
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "id": "5767ed0e-290c-4926-ad42-042cac1facad",
+            "image": "https:\/\/walls.io\/link\/to\/image.jpg",
+            "imageAspectRatio": 1.6,
+            "link": "https:\/\/www.facebook.com"
+        }
+    ]
+}
+```
+
 
 ## Further info
 While not part of the API, there is also the possibility to access your Wall's posts via the [Walls.io JavaScript SDK].
