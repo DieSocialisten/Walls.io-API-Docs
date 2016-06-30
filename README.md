@@ -17,9 +17,9 @@ Walls.io API Documentation
 
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
 
-> **Note**: It is not permitted to access our API directly from the browser, because this would expose your secret access token to the public. We are also rate limiting API calls, so calling the API from the browser will cause you to hit those rate limits very quickly. Frequent offenders are blocked from accessing the Walls.io API.
+> **Note**: It is not permitted to access our API directly from the browser, because this would expose your secret access token to the public. We are also rate limiting API calls, so calling the API from the browser will cause you to hit those rate limits very quickly.
 
-> Instead, call the API from your server and cache the posts there. To avoid hitting any rate limits, make sure to not make more than **1 request per access token per second**, and not more than **1 request per IP address per second**.
+> Instead, call the API from your server and cache the posts there.
 
 
 All endpoints, if called with a `GET` request, support the following response formats:
