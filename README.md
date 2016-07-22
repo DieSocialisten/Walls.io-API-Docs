@@ -73,6 +73,10 @@ All responses from the `/posts` endpoints share the same set of fields:
 
 Returns a list of posts for a wall. The wall is determined by the `access_token` that must be passed with the request.
 
+> **Note**: This endpoint does **not** sort the posts by the date they were posted on their social networks, but in the order they arrive on the Walls.io server. Those sortings can differ greatly, especially after you add a new hashtag or other source in your wall settings.
+
+> This is done deliberately so you can never miss any "old" postings that arrive on this endpoint. However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
+
 #### Example request
 `GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1`
 
