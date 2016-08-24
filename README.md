@@ -257,6 +257,9 @@ Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall m
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
+- `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 
 #### Example response
@@ -288,7 +291,9 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
-
+- `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
 #### Example response
 
