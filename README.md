@@ -1,4 +1,4 @@
-![Walls.io API](http://walls.io/img/visuals/api-diagram.png)
+![Walls.io API](https://walls.io/build/img/usecase-api-access-social-content-visualize-walls.io.png)
 
 Walls.io API Documentation
 ==========================
