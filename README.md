@@ -1,7 +1,7 @@
-![Walls.io API](https://walls.io/build/img/usecase-api-access-social-content-visualize-walls.io.png)
-
 Walls.io API Documentation
 ==========================
+
+![Walls.io API](https://walls.io/build/img/usecase-api-access-social-content-visualize-walls.io.png)
 
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
