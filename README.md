@@ -53,7 +53,8 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `external_name`: The user's screen name or handle.
 - `external_fullname`: Some networks offer a "full name" or "display name" field in addition to the handle. This field contains this display name.
 - `external_user_id`: The user's ID in the social network.
-- `post_image`: The (user-generated) image that was added to this post.
+- `post_image`: The (user-generated) image that was added to this post. If there is also a `post_video`, the `post_image` is usually a preview image of the video.
+- `post_video`: The video that was added to this post.
 - `post_link`: The (user-generated) link that was added to this post.
 - `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a discription of the Twitter entity format, see the [Twitter API docs].
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
@@ -108,6 +109,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "external_user_id":"123456",
       "post_image":"",
       "post_link":"https:\/\/twitter.com\/LOWERERWICK\/status\/487213557436518400",
+      "post_video":null,
       "twitter_entities":"{\"hashtags\":[{\"text\":\"Starbucks\",\"indices\":[14,24]},{\"text\":\"feinding\",\"indices\":[27,36]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
       "twitter_retweet":false,
       "is_highlighted":false,
@@ -130,6 +132,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
       "external_user_id":"234567",
       "post_image":"",
       "post_link":"https:\/\/twitter.com\/TakeMe2TheRyan\/status\/487213383762989056",
+      "post_video":null,
       "twitter_entities":"{\"hashtags\":[{\"text\":\"starbucks\",\"indices\":[13,23]},{\"text\":\"howard\",\"indices\":[35,42]},{\"text\":\"thatsnotmyname\",\"indices\":[46,61]},{\"text\":\"starbucksfail\",\"indices\":[62,76]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
       "twitter_retweet":false,
       "is_highlighted":false,
@@ -186,6 +189,7 @@ This endpoint should be used if you need to know about all updates to existing p
       "permalink": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
       "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/10560907_307861969392635_1595149027_n.jpg",
       "post_link": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
+      "post_video":null,
       "status": true,
       "type": "instagram",
       "userlink": "http:\/\/instagram.com\/getfitgenes",
@@ -232,6 +236,7 @@ Returns a single post, specified by its Walls.io post id.
     "external_user_id": "22059933",
     "post_image": "http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/10499125_748994368486318_763693636_n.jpg",
     "post_link": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
+    "post_video":null,
     "twitter_entities": null,
     "twitter_retweet": false,
     "is_highlighted": false,
