@@ -55,7 +55,8 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `external_user_id`: The user's ID in the social network.
 - `post_image`: The (user-generated) image that was added to this post. If there is also a `post_video`, the `post_image` is usually a preview image of the video.
 - `post_video`: The video that was added to this post.
-- `post_link`: The (user-generated) link that was added to this post.
+- `permalink`: The permalink of this post on the social network it was posted to.
+- `post_link`: Same as `permalink`.
 - `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a discription of the Twitter entity format, see the [Twitter API docs].
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
 - `is_crosspost`: If this post was posted to multiple social networks at the same time, all posts that came after the original one contain `true` for this field. The original post contains `false`.
@@ -65,7 +66,6 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `created_timestamp`: Same as `created`, but as a UNIX timestamp.
 - `modified`: Ths date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io. The timezone is CET (Europe/Vienna).
 - `modified_timestamp`: Same as `modified`, but as a UNIX timestamp.
-- `permalink`: The permalink of this post on the social network it was posted to.
 - `userlink`: A link to the user's profile on the social network the post was posted to.
 - `location`: The name of the geographic position this post was created at, or `null` if none was set.
 - `latitude`: The latitude this post was created at, or `null` if the position was not set.
