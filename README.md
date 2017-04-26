@@ -162,7 +162,6 @@ This endpoint should be used if you need to know about all updates to existing p
 - `access_token` *(required)*: Your Walls.io access token.
 - `limit`: The maximum number of posts you would like to receive. The maximum limit is `1000`. If this parameter is not passed, the limit will be set to `50`.
 - `since`: A timestamp used for pagination of results. You will only receive posts that have been updated since this date and time. Please use the `current_time` field of the response and pass it as the `since` field of the next request.
-- `until`: A UNIX timestamp used for pagination of results. You will only receive posts that have been updated before this date and time.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
