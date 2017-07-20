@@ -346,12 +346,5 @@ Returns a list of ads for a wall. Ads are uploaded and managed in the Walls.io s
 ```
 
 
-## Further info
-While not part of the API, there is also the possibility to access your Wall's posts via the [Walls.io JavaScript SDK].
-
-Please note that the JavaScript SDK is **not officially part of Walls.io**, so we only offer **limited support** for it. Please contact us if you plan to user the JavaScript SDK in one of your projects!
-
-
 [Twitter API docs]:https://dev.twitter.com/docs/entities
 [FAQs]:https://github.com/DieSocialisten/Walls.io-API-Docs/blob/master/FAQ.md
-[Walls.io JavaScript SDK]:https://github.com/DieSocialisten/Walls.io-JS-SDK/
