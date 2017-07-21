@@ -37,17 +37,17 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `id`: The unique Walls.io ID of this post.
 - `comment`: The user-generated text content of this post.
 - `type`: The post type. Possible types are:
- - `"twitter"`
- - `"facebook"`
- - `"instagram"`
- - `"googleplus"`
- - `"foursquare"`
- - `"youtube"`
- - `"flickr"`
- - `"appdotnet"`
- - `"tumblr"`
- - `"reddit"`
- - `"rss"`
+  - `"twitter"`
+  - `"facebook"`
+  - `"instagram"`
+  - `"googleplus"`
+  - `"foursquare"`
+  - `"youtube"`
+  - `"flickr"`
+  - `"appdotnet"`
+  - `"tumblr"`
+  - `"reddit"`
+  - `"rss"`
 - `external_post_id`: The post's id in the social network it originated from.
 - `external_image`: The user's profile pic.
 - `external_name`: The user's screen name or handle.
