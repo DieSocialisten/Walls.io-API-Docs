@@ -6,6 +6,7 @@ Walls.io API Documentation
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
   - [Common Post fields](#common-post-fields)
+  - [Media types](#media-types)
   - [GET api/posts.*{format}*](#get-apipostsformat)
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
