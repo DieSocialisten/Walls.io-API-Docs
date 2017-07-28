@@ -71,6 +71,13 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `latitude`: The latitude this post was created at, or `null` if the position was not set.
 - `longitude`: The longitude this post was created at, or `null` if the position was not set.
 
+### Media types
+
+Walls.io posts have different media types and you can limit your search to these types using the `media_types` parameter. Valid media types are:
+- `text`: Posts that contain a `comment`, but no image or video.
+- `image`: Posts that contain a `post_image`, but no video. However, the `comment` field is still allowed in this media type.
+- `video`: Posts that contain a `post_video`. All other fields are also allowed in this media type, as long as it has a video.
+
 
 ### GET api/posts.*{format}*
 
@@ -90,6 +97,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 - `before`: A post id used for pagination of results. You will only receive posts that have a lower ID than this.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
@@ -164,6 +172,7 @@ This endpoint should be used if you need to know about all updates to existing p
 - `since`: A timestamp used for pagination of results. You will only receive posts that have been updated since this date and time. Please use the `current_time` field of the response and pass it as the `since` field of the next request.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
@@ -264,6 +273,7 @@ Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall m
 - `access_token` *(required)*: Your Walls.io access token.
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
 - `since`: Pass a UNIX timestamp to limit the result to posts that were posted after this time.
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
@@ -299,6 +309,7 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 - `access_token` *(required)*: Your Walls.io access token.
 - `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
 - `since`: Pass a UNIX timestamp to limit the result to posts that were posted after this time.
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 
