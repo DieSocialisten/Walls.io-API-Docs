@@ -213,7 +213,6 @@ Returns a single post, specified by its Walls.io post id.
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
-- `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
 
 
 #### Example response
