@@ -301,8 +301,6 @@ curl -X POST \
   "current_time": 1505470103,
   "data": {
     "image": "https://url.of.some/other/image",
-    "link": null,
-    "location": null,
     "text": "Picture of a cat",
     "user_image": "https://url.of.some/image",
     "user_name": "Cat Facts",
