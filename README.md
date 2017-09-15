@@ -10,6 +10,7 @@ Walls.io API Documentation
   - [GET api/posts.*{format}*](#get-apipostsformat)
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
+  - [POST api/native_posts.*{format}*](#post-apinativepostsformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
   - [GET api/ads.*{format}*](#get-apiadsformat)
@@ -85,7 +86,7 @@ Walls.io posts have different media types and you can limit your search to these
 Returns a list of posts for a wall. The wall is determined by the `access_token` that must be passed with the request.
 
 > **Note**: This endpoint does **not** sort the posts by the date they were posted on their social networks, but in the order they arrive on the Walls.io server. Those sortings can differ greatly, especially after you add a new hashtag or other source in your wall settings.
-> 
+>
 > This is done deliberately so you can never miss any "old" postings that arrive on this endpoint. However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
 #### Example request
@@ -260,6 +261,56 @@ Returns a single post, specified by its Walls.io post id.
 }
 ```
 
+
+### POST api/native_posts.*{format}*
+
+Creates a new Native Post.
+
+Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is not possible to update images via this API.
+
+It is allowed to omit the `text` parameter if an `image` is added, and vice versa. It is not allowed to omit both fields at the same time. Same goes for `user_name` and `user_image`.
+
+The response contains date strings in UTC and numeric UNIX timestamps in seconds.
+
+#### Example request
+```bash
+curl -X POST \
+  https://walls.io/api/native_posts.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
+```
+
+#### Parameters
+
+- `text` *(required if `image` is omitted)*: Text content of the post.
+- `image` *(required if `text` is omitted)*: Main image of the post.
+- `user_name` *(required if `user_image` is omitted)*: Name of the user who created the post.
+- `user_image` *(required if `user_name` is omitted)*: User image of the user who created the post.
+- `link`: The URL that a click on the posts timestamp or the image in the post detail view leads to.
+- `location`: Name of the location where this post was created, e.g. "Vienna, Austria". If no latlong data is added to the post then this location name is used to create geographic data via geocoding.
+- `latitude`: Latitude of the location where this post was created, as a `float`, e.g. `48.208`
+- `longitude`: Longitude of the location where this post was created, as a `float`, e.g. `16.367`
+- `scheduled_timestamp`: If set, the post is not added to the Wall's frontend right away but scheduled to be posted later. Must be a UNIX timestamp in seconds and must not be in the past.
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "info": [],
+  "current_time": 1505470103,
+  "data": {
+    "image": "https://url.of.some/other/image",
+    "link": null,
+    "location": null,
+    "text": "Picture of a cat",
+    "user_image": "https://url.of.some/image",
+    "user_name": "Cat Facts",
+    "posted_at": "2017-09-15 10:08:23",
+    "posted_timestamp": 1505470103
+  }
+}
+```
 
 ### GET api/analytics/posts.*{format}*
 
