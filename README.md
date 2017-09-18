@@ -10,7 +10,7 @@ Walls.io API Documentation
   - [GET api/posts.*{format}*](#get-apipostsformat)
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
-  - [POST api/native_posts.*{format}*](#post-apinativepostsformat)
+  - [POST api/posts.*{format}*](#post-apipostsformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
   - [GET api/ads.*{format}*](#get-apiadsformat)
@@ -262,9 +262,9 @@ Returns a single post, specified by its Walls.io post id.
 ```
 
 
-### POST api/native_posts.*{format}*
+### POST api/posts.*{format}*
 
-Creates a new Native Post.
+Adds a new Native Post to the Wall.
 
 Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is not possible to update images via this API.
 
@@ -275,7 +275,7 @@ The response contains date strings in UTC and numeric UNIX timestamps in seconds
 #### Example request
 ```bash
 curl -X POST \
-  https://walls.io/api/native_posts.json \
+  https://walls.io/api/posts.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
 ```
