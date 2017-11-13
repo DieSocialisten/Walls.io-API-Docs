@@ -38,6 +38,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 
 - `id`: The unique Walls.io ID of this post.
 - `comment`: The user-generated text content of this post.
+- `language`: Language of the post as an ISO 639-1 language code
 - `type`: The post type. Possible types are:
   - `"twitter"`
   - `"facebook"`
