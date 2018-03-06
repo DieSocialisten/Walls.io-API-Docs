@@ -270,7 +270,12 @@ Returns a single post, specified by its Walls.io post id.
 Changes a single post's status or highlighting, specified by its Walls.io post id. Use this endpoint if you want to highlight or hide/unhide a post on the Wall.
 
 #### Example request
-`PUT https://walls.io/api/posts/17824236.json?access_token=<YOUR_ACCESS_TOKEN>`
+```bash
+curl -X PUT \
+  https://walls.io/api/posts/17181206.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&is_highlighted=1&status=1'
+```
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
