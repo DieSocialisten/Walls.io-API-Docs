@@ -279,8 +279,8 @@ curl -X PUT \
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
-- `is_highlighted`: Indicates if the post should be highlighted on the Wall.
-- `status`: A status of the post.
+- `is_highlighted`: Set this to `1` if the post should be highlighted, or `0` to remove an existing highlight flag.
+- `status`: Set this to `1` to show a hidden post, or `0` to hide a visible post.
 
 
 #### Example response
