@@ -10,6 +10,7 @@ Walls.io API Documentation
   - [GET api/posts.*{format}*](#get-apipostsformat)
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
+  - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
   - [POST api/posts.*{format}*](#post-apipostsformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
@@ -264,6 +265,35 @@ Returns a single post, specified by its Walls.io post id.
 }
 ```
 
+### PUT api/posts/*{postId}*.*{format}*
+
+Changes a single post's status or highlighting, specified by its Walls.io post id. Use this endpoint if you want to highlight or hide/unhide a post on the Wall.
+
+#### Example request
+`PUT https://walls.io/api/posts/17824236.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `is_highlighted`: Indicates if the post should be highlighted on the Wall.
+- `status`: A status of the post.
+
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "query": {
+    "postId": 17181206
+  },
+  "current_time": 1408954568,
+  "data": {
+    "id": "17181206",
+    "is_highlighted": false,
+    "status": true,
+  }
+}
+```
 
 ### POST api/posts.*{format}*
 
