@@ -105,6 +105,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response.
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 #### Example response
 
@@ -181,6 +182,7 @@ This endpoint should be used if you need to know about all updates to existing p
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response.
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 #### Example response
 
@@ -228,6 +230,7 @@ Returns a single post, specified by its Walls.io post id.
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 - `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
+- `include_source`: Set this to `1` if you want the post to include the source that it came from.
 
 
 #### Example response
