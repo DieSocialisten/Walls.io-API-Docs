@@ -12,6 +12,10 @@ Walls.io API Documentation
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
   - [POST api/posts.*{format}*](#post-apipostsformat)
+  - [POST api/user_blacklist.*{format}*](#post-apiuserblacklistformat)
+  - [DELETE api/user_blacklist.*{format}*](#delete-apiuserblacklistformat)
+  - [POST api/user_whitelist.*{format}*](#post-apiuserwhitelistformat)
+  - [DELETE api/user_whitelist.*{format}*](#delete-apiuserwhitelistformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
   - [GET api/ads.*{format}*](#get-apiadsformat)
@@ -354,6 +358,75 @@ curl -X POST \
   }
 }
 ```
+
+### POST api/user_blacklist.*{format}*
+
+Adds a user to this Wall's blacklist. This essentially blocks a user from posting to this Wall. All existing posts are automatically hidden (unless a moderator set the post's status to "visible") and no future posts will come in.
+
+#### Example request
+```bash
+curl -X POST \
+  https://walls.io/api/user_blacklist.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+```
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
+- `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
+
+### DELETE api/user_blacklist.*{format}*
+
+Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist.*{format}*](#delete-apiuserblacklistformat) method.
+
+#### Example request
+```bash
+curl -X DELETE \
+  https://walls.io/api/user_blacklist.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+```
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
+- `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
+
+### POST api/user_whitelist.*{format}*
+
+Adds a user to this Wall's whitelist. All posts of whitelisted users are approved automatically and instantly appear on the Wall's frontend, even if the Wall is set to manual moderation.
+
+#### Example request
+```bash
+curl -X POST \
+  https://walls.io/api/user_whitelist.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+```
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
+- `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
+
+### DELETE api/user_whitelist.*{format}*
+
+Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist.*{format}*](#delete-apiuserwhitelistformat) method.
+
+#### Example request
+```bash
+curl -X DELETE \
+  https://walls.io/api/user_whitelist.json \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+```
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
+- `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
+
 
 ### GET api/analytics/posts.*{format}*
 
