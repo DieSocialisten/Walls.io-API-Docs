@@ -12,10 +12,10 @@ Walls.io API Documentation
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
   - [POST api/posts.*{format}*](#post-apipostsformat)
-  - [POST api/user_blacklist.*{format}*](#post-apiuserblacklistformat)
-  - [DELETE api/user_blacklist.*{format}*](#delete-apiuserblacklistformat)
-  - [POST api/user_whitelist.*{format}*](#post-apiuserwhitelistformat)
-  - [DELETE api/user_whitelist.*{format}*](#delete-apiuserwhitelistformat)
+  - [POST api/user_blacklist.*{format}*](#post-apiuser_blacklistformat)
+  - [DELETE api/user_blacklist.*{format}*](#delete-apiuser_blacklistformat)
+  - [POST api/user_whitelist.*{format}*](#post-apiuser_whitelistformat)
+  - [DELETE api/user_whitelist.*{format}*](#delete-apiuser_whitelistformat)
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
   - [GET api/ads.*{format}*](#get-apiadsformat)
@@ -276,7 +276,7 @@ Returns a single post, specified by its Walls.io post id.
 
 Changes a single post's visibility status, highlighting, language, or spam status. The post is identified by its Walls.io post id.
 
-This endpoint allows you to perform most actions you can do in the "Posts" tab of your Wall's "Moderation" page. One notable exception is the "Block user" (or "Whitelist user") feature which is done via the [POST api/user_blacklist](#post-apiuserblacklistformat) (or [POST api/user_whitelist](#post-apiuserwhitelistformat)) endpoint.
+This endpoint allows you to perform most actions you can do in the "Posts" tab of your Wall's "Moderation" page. One notable exception is the "Block user" (or "Whitelist user") feature which is done via the [POST api/user_blacklist](#post-apiuser_blacklistformat) (or [POST api/user_whitelist](#post-apiuser_whitelistformat)) endpoint.
 
 You can perform multiple actions at once by setting multipe parameters.
 
@@ -378,7 +378,7 @@ curl -X POST \
 
 ### DELETE api/user_blacklist.*{format}*
 
-Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist.*{format}*](#delete-apiuserblacklistformat) method.
+Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist.*{format}*](#delete-apiuser_blacklistformat) method.
 
 #### Example request
 ```bash
@@ -412,7 +412,7 @@ curl -X POST \
 
 ### DELETE api/user_whitelist.*{format}*
 
-Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist.*{format}*](#delete-apiuserwhitelistformat) method.
+Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist.*{format}*](#delete-apiuser_whitelistformat) method.
 
 #### Example request
 ```bash
