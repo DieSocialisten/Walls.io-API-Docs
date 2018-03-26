@@ -378,7 +378,7 @@ curl -X POST \
 
 ### DELETE api/user_blacklist.*{format}*
 
-Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist](#delete-apiuser_blacklistformat) method.
+Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist](#post-apiuser_blacklistformat) method.
 
 #### Example request
 ```bash
@@ -412,7 +412,7 @@ curl -X POST \
 
 ### DELETE api/user_whitelist.*{format}*
 
-Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist](#delete-apiuser_whitelistformat) method.
+Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist](#post-apiuser_whitelistformat) method.
 
 #### Example request
 ```bash
