@@ -45,17 +45,22 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `comment`: The user-generated text content of this post.
 - `language`: Language of the post as an ISO 639-1 language code
 - `type`: The post type. Possible types are:
-  - `"twitter"`
   - `"facebook"`
-  - `"instagram"`
-  - `"googleplus"`
-  - `"foursquare"`
-  - `"youtube"`
   - `"flickr"`
-  - `"appdotnet"`
-  - `"tumblr"`
+  - `"foursquare"`
+  - `"googleplus"`
+  - `"instagram"`
+  - `"linkedin"`
+  - `"messenger"`
+  - `"pinterest"`
   - `"reddit"`
   - `"rss"`
+  - `"tumblr"`
+  - `"twitter"`
+  - `"vimeo"`
+  - `"vkontakte"`
+  - `"wallsio"`
+  - `"youtube"`
 - `external_post_id`: The post's id in the social network it originated from.
 - `external_image`: The user's profile pic.
 - `external_name`: The user's screen name or handle.
