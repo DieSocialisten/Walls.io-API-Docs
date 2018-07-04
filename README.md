@@ -324,7 +324,7 @@ Native Posts can be posted to the Wall right away, or scheduled to be posted lat
 
 It is allowed to omit the `text` parameter if an `image` is added, and vice versa. It is not allowed to omit both fields at the same time. Same goes for `user_name` and `user_image`.
 
-Note that the `is_highlighted` and `status` fields can only be set for native posts that are immediately posted. As of now, it is not possible to set those fields on scheduled posts.
+Note that the `is_highlighted` and `status` fields can only be set for native posts that are immediately posted. As of now, it is not possible to set those fields on scheduled posts. However, this will become possible in a future update of this API.
 
 The response contains date strings in UTC and numeric UNIX timestamps in seconds.
 
@@ -348,7 +348,7 @@ curl -X POST \
 - `longitude`: Longitude of the location where this post was created, as a `float`, e.g. `16.367`
 - `scheduled_timestamp`: If set, the post is not added to the Wall's frontend right away but scheduled to be posted later. Must be a UNIX timestamp in seconds and must not be in the past.
 - `is_highlighted`: Set this to `1` if the post should be highlighted.
-- `status`: Per default, posts created via the API are immediately visible, even on walls with manual moderation. This can be bypassed by setting this field to `0`, which forces the new post to be invisible, requiring a moderator to manually reveal it.
+- `status`: Set this to `1` or `0` to force the visibility (a.k.a. "status") of the new post. Usually the status is determined by checking the post against the language filter, spam filter, and several blacklists and whitelists. All of those checks can be bypassed by explicitly setting the `status` field in this call.
 
 #### Example response
 
