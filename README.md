@@ -19,7 +19,6 @@ Walls.io API Documentation
   - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
   - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
   - [GET api/ads.*{format}*](#get-apiadsformat)
-- [Further info](#further-info)
 
 
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
