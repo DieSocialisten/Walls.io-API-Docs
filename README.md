@@ -323,8 +323,6 @@ Native Posts can be posted to the Wall right away, or scheduled to be posted lat
 
 It is allowed to omit the `text` parameter if an `image` is added, and vice versa. It is not allowed to omit both fields at the same time. Same goes for `user_name` and `user_image`.
 
-Note that the `is_highlighted` and `status` fields can only be set for native posts that are immediately posted. As of now, it is not possible to set those fields on scheduled posts. However, this will become possible in a future update of this API.
-
 The response contains date strings in UTC and numeric UNIX timestamps in seconds.
 
 #### Example request
