@@ -319,7 +319,7 @@ curl -X PUT \
 
 Adds a new Native Post to the Wall.
 
-Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is not possible to update images via this API.
+Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is currently not possible to upload images via this API.
 
 It is allowed to omit the `text` parameter if an `image` is added, and vice versa. It is not allowed to omit both fields at the same time. Same goes for `user_name` and `user_image`.
 
