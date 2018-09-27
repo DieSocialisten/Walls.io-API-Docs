@@ -9,6 +9,7 @@ Walls.io API Documentation
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
+  - [POST api/media_upload.*{format}*](#post-apimediauploadformat)
   - [POST api/posts.*{format}*](#post-apipostsformat)
   - [POST api/user_blacklist.*{format}*](#post-apiuser_blacklistformat)
   - [DELETE api/user_blacklist.*{format}*](#delete-apiuser_blacklistformat)
@@ -309,6 +310,43 @@ curl -X PUT \
   "current_time": 1408954568,
   "data": {
     // ... the full updated post
+  }
+}
+```
+
+### POST api/media_upload.*{format}*
+
+Uploads an image or video which can then be used in [POST api/posts.*{format}*](#post-apipostsformat).
+
+It is possible to add an image and video to the same post in [POST api/posts.*{format}*](#post-apipostsformat). However, the files must be uploaded individually.
+
+Please make sure you add the HTTP header `Content-Type: multipart/form-data`.
+
+Upon successful upload this method will return an ID (see example response) which can then be used instead of a URL in [POST api/posts.*{format}*](#post-apipostsformat).
+
+#### Example request
+```bash
+curl -X POST \
+  https://walls.io/api/media_upload.json \
+  -H 'Content-Type: multipart/form-data' \
+  -F access_token=<YOUR_ACCESS_TOKEN> \
+  -F 'image=@/path/to/file/on/local/filesystem.jpg'
+```
+
+#### Parameters
+
+- `image`: Image file to be uploaded
+- `video`: Video file to be uploaded
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "info": [],
+  "current_time": 1538038106,
+  "data": {
+    "id": "5bac9959-4b0c-4916-bc0e-00fbac18000b"
   }
 }
 ```
