@@ -1,8 +1,6 @@
 Walls.io API Documentation
 ==========================
 
-![Walls.io API](https://walls.io/build/img/usecase-api-access-social-content-visualize-walls.io.png)
-
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
   - [Common Post fields](#common-post-fields)
