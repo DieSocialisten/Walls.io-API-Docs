@@ -321,6 +321,8 @@ Native Posts can be posted to the Wall right away, or scheduled to be posted lat
 
 It is allowed to omit the `text` parameter if an `image` or `video` is added, and vice versa. It is not allowed to omit all three of those fields at the same time. Same goes for `user_name` and `user_image`.
 
+If you add a `video` **and** an `image` then the latter will be uses as a preview image for the video. If only a `video` is set then a preview image will be automatically generated.
+
 The response contains date strings in UTC and numeric UNIX timestamps in seconds.
 
 #### Example request
