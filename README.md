@@ -355,7 +355,7 @@ curl -X POST \
 
 Adds a new Native Post to the Wall.
 
-Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is currently not possible to upload images via this API.
+Native Posts can be posted to the Wall right away, or scheduled to be posted later. You can add an image or video to your post by specifying a publicly available URL, or by uploading it via [POST api/media_upload.*{format}*](#post-apimediauploadformat).
 
 It is allowed to omit the `text` parameter if an `image` or `video` is added, and vice versa. It is not allowed to omit all three of those fields at the same time. Same goes for `user_name` and `user_image`.
 
@@ -375,7 +375,11 @@ curl -X POST \
 
 - `text` *(required if `image` and `video` are omitted)*: Text content of the post.
 - `video` *(required if `text` and `image` are omitted)*: Video of the post.
+  - Must be in MP4 format
+  - This can either be a full URL to a video, or an ID returned by [POST api/media_upload.*{format}*](#post-apimediauploadformat)
 - `image` *(required if `text` and `video` are omitted)*: Main image of the post. If `video` is also set then this image is only used as a preview for the video.
+  - Allowed formats: JPG, PNG, GIF
+  - This can either be a full URL to an image, or an ID returned by [POST api/media_upload.*{format}*](#post-apimediauploadformat)
 - `user_name` *(required if `user_image` is omitted)*: Name of the user who created the post.
 - `user_image` *(required if `user_name` is omitted)*: User image of the user who created the post.
 - `link`: The URL that a click on the posts timestamp or the image in the post detail view leads to.
