@@ -9,6 +9,7 @@ Walls.io API Documentation
   - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
   - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
   - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
+  - [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
   - [POST api/posts.*{format}*](#post-apipostsformat)
   - [POST api/user_blacklist.*{format}*](#post-apiuser_blacklistformat)
   - [DELETE api/user_blacklist.*{format}*](#delete-apiuser_blacklistformat)
@@ -313,13 +314,52 @@ curl -X PUT \
 }
 ```
 
+### POST api/media_upload.*{format}*
+
+Uploads an image or video which can then be used in [POST api/posts.*{format}*](#post-apipostsformat).
+
+It is possible to add an image and video to the same post in [POST api/posts.*{format}*](#post-apipostsformat). However, the files must be uploaded individually.
+
+Please make sure you add the HTTP header `Content-Type: multipart/form-data`.
+
+Upon successful upload this method will return an ID (see example response) which can then be used instead of a URL in [POST api/posts.*{format}*](#post-apipostsformat).
+
+#### Example request
+```bash
+curl -X POST \
+  https://walls.io/api/media_upload.json \
+  -H 'Content-Type: multipart/form-data' \
+  -F access_token=<YOUR_ACCESS_TOKEN> \
+  -F 'image=@/path/to/file/on/local/filesystem.jpg'
+```
+
+#### Parameters
+
+- `image`: Image file to be uploaded
+- `video`: Video file to be uploaded
+
+#### Example response
+
+```json
+{
+  "status": "success",
+  "info": [],
+  "current_time": 1538038106,
+  "data": {
+    "id": "5bac9959-4b0c-4916-bc0e-00fbac18000b"
+  }
+}
+```
+
 ### POST api/posts.*{format}*
 
 Adds a new Native Post to the Wall.
 
-Native Posts can be posted to the Wall right away, or scheduled to be posted later. Please note that any images you add to your post have to be publicly accessible. It is currently not possible to upload images via this API.
+Native Posts can be posted to the Wall right away, or scheduled to be posted later. You can add an image or video to your post by specifying a publicly available URL, or by uploading it via [POST api/media_upload.*{format}*](#post-apimedia_uploadformat).
 
-It is allowed to omit the `text` parameter if an `image` is added, and vice versa. It is not allowed to omit both fields at the same time. Same goes for `user_name` and `user_image`.
+It is allowed to omit the `text` parameter if an `image` or `video` is added, and vice versa. It is not allowed to omit all three of those fields at the same time. Same goes for `user_name` and `user_image`.
+
+If you add a `video` **and** an `image` then the latter will be uses as a preview image for the video. If only a `video` is set then a preview image will be automatically generated.
 
 The response contains date strings in UTC and numeric UNIX timestamps in seconds.
 
@@ -328,13 +368,18 @@ The response contains date strings in UTC and numeric UNIX timestamps in seconds
 curl -X POST \
   https://walls.io/api/posts.json \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
+  -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&video=5bac9959-4b0c-4916-bc0e-00faac12000b&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
 ```
 
 #### Parameters
 
-- `text` *(required if `image` is omitted)*: Text content of the post.
-- `image` *(required if `text` is omitted)*: Main image of the post.
+- `text` *(required if `image` and `video` are omitted)*: Text content of the post.
+- `video` *(required if `text` and `image` are omitted)*: Video of the post.
+  - Must be in MP4 format
+  - This can either be a full URL to a video, or an ID returned by [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
+- `image` *(required if `text` and `video` are omitted)*: Main image of the post. If `video` is also set then this image is only used as a preview for the video.
+  - Allowed formats: JPG, PNG, GIF
+  - This can either be a full URL to an image, or an ID returned by [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
 - `user_name` *(required if `user_image` is omitted)*: Name of the user who created the post.
 - `user_image` *(required if `user_name` is omitted)*: User image of the user who created the post.
 - `link`: The URL that a click on the posts timestamp or the image in the post detail view leads to.
@@ -354,6 +399,7 @@ curl -X POST \
   "current_time": 1505470103,
   "data": {
     "image": "https://url.of.some/other/image",
+    "video": "https://walls.io/path/to/uploaded_video.mp4",
     "text": "Picture of a cat",
     "user_image": "https://url.of.some/image",
     "user_name": "Cat Facts",
