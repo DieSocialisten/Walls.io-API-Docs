@@ -45,7 +45,6 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `type`: The post type. Possible types are:
   - `"facebook"`
   - `"flickr"`
-  - `"foursquare"`
   - `"instagram"`
   - `"linkedin"`
   - `"messenger"`
