@@ -63,7 +63,9 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `external_fullname`: Some networks offer a "full name" or "display name" field in addition to the handle. This field contains this display name.
 - `external_user_id`: The user's ID in the social network.
 - `post_image`: The (user-generated) image that was added to this post. If there is also a `post_video`, the `post_image` is usually a preview image of the video.
+- `post_image_cdn`: Same as `post_image`, but served by our content delivery network.
 - `post_video`: The video that was added to this post.
+- `post_video_cdn`: Same as `post_video`, but served by our content delivery network.
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `post_link`: Same as `permalink`.
 - `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a discription of the Twitter entity format, see the [Twitter API docs].
