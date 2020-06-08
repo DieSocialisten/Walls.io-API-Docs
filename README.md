@@ -381,7 +381,7 @@ It is possible to add an image and video to the same post in [POST api/posts.*{f
 
 Please make sure you add the HTTP header `Content-Type: multipart/form-data`.
 
-> **Note**: The maximum file size for uploads is 10MB for images and 20MB for videos.
+> **Note**: The maximum file size for uploads is 25MB for images and 50MB for videos.
 
 Upon successful upload this method will return an ID (see example response) which can then be used instead of a URL in [POST api/posts.*{format}*](#post-apipostsformat).
 
