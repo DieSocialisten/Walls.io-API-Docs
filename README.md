@@ -46,7 +46,6 @@ All responses from the `/posts` endpoints share the same set of fields:
   - `"facebook"`
   - `"flickr"`
   - `"instagram"`
-  - `"linkedin"`
   - `"messenger"`
   - `"pinterest"`
   - `"reddit"`
