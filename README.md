@@ -26,12 +26,7 @@ All endpoints require a valid API access token. Find out how to get one in the [
 >
 > Instead, call the API from your server and cache the posts there.
 
-
-All endpoints, if called with a `GET` request, support the following response formats:
-- **JSON**: Expample request: `api/posts.json`
-- **XML**: Example request: `api/posts.xml`
-- **RSS**: Example request: `api/posts.rss` (This format is available on the posts-endpoint only!)
-
+All JSON endpoints also support the `.xml` extension.
 
 ### Common Post fields
 
