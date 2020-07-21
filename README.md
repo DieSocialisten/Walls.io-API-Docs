@@ -5,19 +5,21 @@ Walls.io API Documentation
 - [Posts Endpoints](#posts-endpoints)
   - [Common Post fields](#common-post-fields)
   - [Media types](#media-types)
-  - [GET api/posts.*{format}*](#get-apipostsformat)
-  - [GET api/posts/changed.*{format}*](#get-apipostschangedformat)
-  - [GET api/posts/*{postId}*.*{format}*](#get-apipostspostidformat)
-  - [PUT api/posts/*{postId}*.*{format}*](#put-apipostspostidformat)
-  - [POST api/posts.*{format}*](#post-apipostsformat)
-  - [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
-  - [POST api/user_blacklist.*{format}*](#post-apiuser_blacklistformat)
-  - [DELETE api/user_blacklist.*{format}*](#delete-apiuser_blacklistformat)
-  - [POST api/user_whitelist.*{format}*](#post-apiuser_whitelistformat)
-  - [DELETE api/user_whitelist.*{format}*](#delete-apiuser_whitelistformat)
-  - [GET api/analytics/posts.*{format}*](#get-apianalyticspostsformat)
-  - [GET api/analytics/users.*{format}*](#get-apianalyticsusersformat)
-  - [GET api/ads.*{format}*](#get-apiadsformat)
+  - [GET api/posts.json](#get-apipostsjson)
+  - [GET api/posts.rss](#get-apipostsrss)
+  - [GET api/posts/changed.json](#get-apipostschangedjson)
+  - [GET api/posts/changed.rss](#get-apipostschangedrss)
+  - [GET api/posts/*{postId}*.json](#get-apipostspostidjson)
+  - [PUT api/posts/*{postId}*.json](#put-apipostspostidjson)
+  - [POST api/posts.json](#post-apipostsjson)
+  - [POST api/media_upload.json](#post-apimedia_uploadjson)
+  - [POST api/user_blacklist.json](#post-apiuser_blacklistjson)
+  - [DELETE api/user_blacklist.json](#delete-apiuser_blacklistjson)
+  - [POST api/user_whitelist.json](#post-apiuser_whitelistjson)
+  - [DELETE api/user_whitelist.json](#delete-apiuser_whitelistjson)
+  - [GET api/analytics/posts.json](#get-apianalyticspostsjson)
+  - [GET api/analytics/users.json](#get-apianalyticsusersjson)
+  - [GET api/ads.json](#get-apiadsjson)
 
 
 All endpoints require a valid API access token. Find out how to get one in the [FAQs].
@@ -26,16 +28,9 @@ All endpoints require a valid API access token. Find out how to get one in the [
 >
 > Instead, call the API from your server and cache the posts there.
 
+All JSON endpoints also support the `.xml` extension.
 
-All endpoints, if called with a `GET` request, support the following response formats:
-- **JSON**: Expample request: `api/posts.json`
-- **XML**: Example request: `api/posts.xml`
-- **RSS**: Example request: `api/posts.rss` (This format is available on the posts-endpoint only!)
-
-
-## Posts Endpoints
-
-### Common Post fields
+## Common Post fields
 
 All responses from the `/posts` endpoints share the same set of fields:
 
@@ -67,7 +62,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_video_cdn`: Same as `post_video`, but served by our content delivery network.
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `post_link`: Same as `permalink`.
-- `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a discription of the Twitter entity format, see the [Twitter API docs].
+- `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a description of the Twitter entity format, see the [Twitter API docs].
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
 - `is_crosspost`: If this post was posted to multiple social networks at the same time, all posts that came after the original one contain `true` for this field. The original post contains `false`.
 - `is_highlighted`: `true` if the post has been highlighted by a moderator; `false` otherwise.
@@ -81,7 +76,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `latitude`: The latitude this post was created at, or `null` if the position was not set.
 - `longitude`: The longitude this post was created at, or `null` if the position was not set.
 
-### Media types
+## Media types
 
 Walls.io posts have different media types and you can limit your search to these types using the `media_types` parameter. Valid media types are:
 - `text`: Posts that contain a `comment`, but no image or video.
@@ -89,7 +84,7 @@ Walls.io posts have different media types and you can limit your search to these
 - `video`: Posts that contain a `post_video`. All other fields are also allowed in this media type, as long as it has a video.
 
 
-### GET api/posts.*{format}*
+## GET api/posts.json
 
 Returns a list of posts for a wall. The wall is determined by the `access_token` that must be passed with the request.
 
@@ -169,7 +164,29 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 }
 ```
 
-### GET api/posts/changed.*{format}*
+## GET api/posts.rss
+
+Get an RSS feed with the wall's posts.
+The wall is determined by the `access_token` that must be passed with the request.
+
+#### Example request
+`GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `limit`: The maximum number of posts you would like to receive. Maximum `1000`, default `50`.
+- `after`: A post id used for pagination of results. You will only receive posts that have a higher ID than this.
+- `before`: A post id used for pagination of results. You will only receive posts that have a lower ID than this.
+- `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
+- `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
+- `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response.
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `include_source`: Set this to `1` if you want each post to include the source that it came from.
+
+
+## GET api/posts/changed.json
 
 Returns a list of posts for a wall, ordered by the time they were updated. The wall is determined by the `access_token` that must be passed with the request.
 
@@ -225,8 +242,30 @@ This endpoint should be used if you need to know about all updates to existing p
 }
 ```
 
+## GET api/posts/changed.rss
 
-### GET api/posts/*{postId}*.*{format}*
+Returns an RSS feed with the wall's posts, ordered by the time they were updated. The wall is determined by the `access_token` that must be passed with the request.
+
+This endpoint should be used if you need to know about all updates to existing posts, as well as new posts. Every time an existing post is updated, it rises to the top of this endpoint's response.
+
+#### Parameters
+- `access_token` *(required)*: Your Walls.io access token.
+- `since` *(required)*: A timestamp used for pagination of results. You will only receive posts that have been updated since this date and time. Please use the `current_time` field of the response and pass it as the `since` field of the next request.
+- `limit`: The maximum number of posts you would like to receive. The maximum limit is `1000`. If this parameter is not passed, the limit will be set to `50`.
+- `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
+- `types`: A comma-separated list of the types of posts you would like to receive. For a full list of possible types see the `type` field in the  [list of common fields](#common-post-fields).
+- `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. For a full list of media types see the `media_type` field in the  [list of media types](#media-types).
+- `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response.
+- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
+- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `include_source`: Set this to `1` if you want each post to include the source that it came from.
+
+
+#### Example request
+`GET https://walls.io/api/posts/changed.rss?access_token=<YOUR_ACCESS_TOKEN>&since=1404996397`
+
+
+## GET api/posts/*{postId}*.json
 
 Returns a single post, specified by its Walls.io post id.
 
@@ -274,11 +313,11 @@ Returns a single post, specified by its Walls.io post id.
 }
 ```
 
-### PUT api/posts/*{postId}*.*{format}*
+## PUT api/posts/*{postId}*.json
 
 Changes a single post's visibility status, highlighting, language, or spam status. The post is identified by its Walls.io post id.
 
-This endpoint allows you to perform most actions you can do in the "Posts" tab of your Wall's "Moderation" page. One notable exception is the "Block user" (or "Whitelist user") feature which is done via the [POST api/user_blacklist](#post-apiuser_blacklistformat) (or [POST api/user_whitelist](#post-apiuser_whitelistformat)) endpoint.
+This endpoint allows you to perform most actions you can do in the "Posts" tab of your Wall's "Moderation" page. One notable exception is the "Block user" (or "Whitelist user") feature which is done via the [POST api/user_blacklist](#post-apiuser_blacklistjson) (or [POST api/user_whitelist](#post-apiuser_whitelistjson)) endpoint.
 
 You can perform multiple actions at once by setting multipe parameters.
 
@@ -314,11 +353,11 @@ curl -X PUT \
 ```
 
 
-### POST api/posts.*{format}*
+## POST api/posts.json
 
 Adds a new Native Post to the Wall.
 
-Native Posts can be posted to the Wall right away, or scheduled to be posted later. You can add an image or video to your post by specifying a publicly available URL, or by uploading it via [POST api/media_upload.*{format}*](#post-apimedia_uploadformat).
+Native Posts can be posted to the Wall right away, or scheduled to be posted later. You can add an image or video to your post by specifying a publicly available URL, or by uploading it via [POST api/media_upload.json](#post-apimedia_uploadjson).
 
 It is allowed to omit the `text` parameter if an `image` or `video` is added, and vice versa. It is not allowed to omit all three of those fields at the same time. Same goes for `user_name` and `user_image`.
 
@@ -339,10 +378,10 @@ curl -X POST \
 - `text` *(required if `image` and `video` are omitted)*: Text content of the post.
 - `video` *(required if `text` and `image` are omitted)*: Video of the post.
   - Must be in MP4 format
-  - This can either be a full URL to a video, or an ID returned by [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
+  - This can either be a full URL to a video, or an ID returned by [POST api/media_upload.json](#post-apimedia_uploadjson)
 - `image` *(required if `text` and `video` are omitted)*: Main image of the post. If `video` is also set then this image is only used as a preview for the video.
   - Allowed formats: JPG, PNG, GIF
-  - This can either be a full URL to an image, or an ID returned by [POST api/media_upload.*{format}*](#post-apimedia_uploadformat)
+  - This can either be a full URL to an image, or an ID returned by [POST api/media_upload.json](#post-apimedia_uploadjson)
 - `user_name` *(required if `user_image` is omitted)*: Name of the user who created the post.
 - `user_image` *(required if `user_name` is omitted)*: User image of the user who created the post.
 - `link`: The URL that a click on the posts timestamp or the image in the post detail view leads to.
@@ -372,17 +411,17 @@ curl -X POST \
 }
 ```
 
-### POST api/media_upload.*{format}*
+## POST api/media_upload.json
 
-Uploads an image or video which can then be used in [POST api/posts.*{format}*](#post-apipostsformat).
+Uploads an image or video which can then be used in [POST api/posts.json](#post-apipostsjson).
 
-It is possible to add an image and video to the same post in [POST api/posts.*{format}*](#post-apipostsformat). However, the files must be uploaded individually.
+It is possible to add an image and video to the same post in [POST api/posts.json](#post-apipostsjson). However, the files must be uploaded individually.
 
 Please make sure you add the HTTP header `Content-Type: multipart/form-data`.
 
 > **Note**: The maximum file size for uploads is 25MB for images and 50MB for videos.
 
-Upon successful upload this method will return an ID (see example response) which can then be used instead of a URL in [POST api/posts.*{format}*](#post-apipostsformat).
+Upon successful upload this method will return an ID (see example response) which can then be used instead of a URL in [POST api/posts.json](#post-apipostsjson).
 
 #### Example request
 ```bash
@@ -411,7 +450,7 @@ curl -X POST \
 }
 ```
 
-### POST api/user_blacklist.*{format}*
+## POST api/user_blacklist.json
 
 Adds a user to this Wall's blacklist. This essentially blocks a user from posting to this Wall. All existing posts are automatically hidden (unless a moderator set the post's status to "visible") and no future posts will come in.
 
@@ -428,9 +467,9 @@ curl -X POST \
 - `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
 - `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
 
-### DELETE api/user_blacklist.*{format}*
+## DELETE api/user_blacklist.json
 
-Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist](#post-apiuser_blacklistformat) method.
+Removes a user from this Wall's blacklist. This is an undo of the [POST api/user_blacklist](#post-apiuser_blacklistjson) method.
 
 #### Example request
 ```bash
@@ -445,7 +484,7 @@ curl -X DELETE \
 - `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
 - `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
 
-### POST api/user_whitelist.*{format}*
+## POST api/user_whitelist.json
 
 Adds a user to this Wall's whitelist. All posts of whitelisted users are approved automatically and instantly appear on the Wall's frontend, even if the Wall is set to manual moderation.
 
@@ -462,9 +501,9 @@ curl -X POST \
 - `network` *(required)*: The social network of the user. Find it in any `/api/posts` response under the field name `type`.
 - `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
 
-### DELETE api/user_whitelist.*{format}*
+## DELETE api/user_whitelist.json
 
-Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist](#post-apiuser_whitelistformat) method.
+Removes a user from this Wall's whitelist. This is an undo of the [POST api/user_whitelist](#post-apiuser_whitelistjson) method.
 
 #### Example request
 ```bash
@@ -480,7 +519,7 @@ curl -X DELETE \
 - `external_user_id` *(required)*: The user's ID on the social network. Find it in any `/api/posts` response under the same field name.
 
 
-### GET api/analytics/posts.*{format}*
+## GET api/analytics/posts.json
 
 Returns the number of posts per social networks on your wall. Also returns the total number of posts.
 
@@ -517,7 +556,7 @@ Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall m
 ```
 
 
-### GET api/analytics/users.*{format}*
+## GET api/analytics/users.json
 
 Returns the number of unique users that have posted on your wall, grouped by social network. Also returns the total number of unique users.
 
@@ -552,9 +591,9 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 }
 ```
 
-### GET api/ads.*{format}*
+## GET api/ads.json
 
-Returns a list of ads for a wall. Ads are uploaded and managed in the Walls.io settings. The Wall is determined by the `access_token` that must be passed with the request.
+Returns a list of ads (Sponsored Posts) for a wall. Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts). The Wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
 `GET https://walls.io/api/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
