@@ -593,7 +593,7 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 
 ## GET api/ads.json
 
-Returns a list of ads for a wall. Ads are uploaded and managed in the Walls.io settings. The Wall is determined by the `access_token` that must be passed with the request.
+Returns a list of ads (Sponsored Posts) for a wall. Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts). The Wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
 `GET https://walls.io/api/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
