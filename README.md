@@ -33,8 +33,6 @@ All endpoints, if called with a `GET` request, support the following response fo
 - **RSS**: Example request: `api/posts.rss` (This format is available on the posts-endpoint only!)
 
 
-## Posts Endpoints
-
 ### Common Post fields
 
 All responses from the `/posts` endpoints share the same set of fields:
