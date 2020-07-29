@@ -36,6 +36,9 @@ All responses from the `/posts` endpoints share the same set of fields:
 
 - `id`: The unique Walls.io ID of this post.
 - `comment`: The user-generated text content of this post.
+- `cta`: The call to action set for this post
+  - `text`: the selected text for the cta for this post
+  - `url`: the url/link for the cta for this post
 - `language`: Language of the post as an ISO 639-1 language code
 - `type`: The post type. Possible types are:
   - `"facebook"`
@@ -117,6 +120,10 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
     {
       "id":"146670",
       "comment":"3 days and no #Starbucks \n\n#feinding",
+      "cta": {
+        "text": "SHOP_NOW",
+        "url": "https://walls.io"
+      },
       "type":"twitter",
       "external_image":"http:\/\/pbs.twimg.com\/profile_images\/471635099977408512\/cWPhJJWz_normal.jpeg",
       "external_name":"LOWERERWICK",
@@ -218,6 +225,7 @@ This endpoint should be used if you need to know about all updates to existing p
     {
       "id": "17181205",
       "comment": "Oooh, it's a #Venti #Pike kinda day!! Can't even set the alarm \"later\" my internal clock is set.. That & my lovely roommates alarm blasting at 5:30 woke ME up (he's still sleeping).. lol. Bueno, laundry done, off to the gym before a meeting & getting the day started..",
+      "cta": null,
       "external_fullname": null,
       "external_image": "http:\/\/images.ak.instagram.com\/profiles\/profile_372993670_75sq_1398301155.jpg",
       "external_name": "getfitgenes",
@@ -290,6 +298,7 @@ Returns a single post, specified by its Walls.io post id.
   "data": {
     "id": "17181206",
     "comment": "A heart on my cup and a wink! #ivepulled #guiltypleasure #starbucks",
+    "cta": null,
     "type": "instagram",
     "external_image": "http:\/\/photos-f.ak.instagram.com\/hphotos-ak-xpf1\/10369543_654365497965469_839887771_a.jpg",
     "external_name": "mferrari1",
