@@ -38,7 +38,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `comment`: The user-generated text content of this post.
 - `cta`: The call to action set for this post
   - `text`: The selected text. Possible values are `"APPLY_NOW"`, `"BOOK_NOW"`, `"CONTACT_US"`, `"DOWNLOAD"`, `"LEARN_MORE"`, `"SHOP_NOW"`, and `"SIGN_UP"`. 
-  - `url`: The URL/link of this CTA button```
+  - `url`: The URL/link of this CTA button
 - `language`: Language of the post as an ISO 639-1 language code
 - `type`: The post type. Possible types are:
   - `"facebook"`
