@@ -394,6 +394,7 @@ curl -X POST \
 - `user_name` *(required if `user_image` is omitted)*: Name of the user who created the post.
 - `user_image` *(required if `user_name` is omitted)*: User image of the user who created the post.
 - `link`: The URL that a click on the posts timestamp or the image in the post detail view leads to.
+- `language` The post's language. If no value is given, we try to detect the language from the `text` field.
 - `location`: Name of the location where this post was created, e.g. "Vienna, Austria". If no latlong data is added to the post then this location name is used to create geographic data via geocoding.
 - `latitude`: Latitude of the location where this post was created, as a `float`, e.g. `48.208`
 - `longitude`: Longitude of the location where this post was created, as a `float`, e.g. `16.367`
