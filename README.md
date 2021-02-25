@@ -96,7 +96,7 @@ Returns a list of posts for a wall. The wall is determined by the `access_token`
 > This is done deliberately so you can never miss any "old" postings that arrive on this endpoint. However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
 #### Example request
-`GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1`
+`GET https://api.walls.io/v1/posts.json?access_token=<YOUR_ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -177,7 +177,7 @@ Get an RSS feed with the wall's posts.
 The wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
-`GET https://walls.io/api/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -200,7 +200,7 @@ Returns a list of posts for a wall, ordered by the time they were updated. The w
 This endpoint should be used if you need to know about all updates to existing posts, as well as new posts. Every time an existing post is updated, it rises to the top of this endpoint's response.
 
 #### Example request
-`GET https://walls.io/api/posts/changed.json?access_token=<YOUR_ACCESS_TOKEN>&since=1404996397`
+`GET https://api.walls.io/v1/posts/changed.json?access_token=<YOUR_ACCESS_TOKEN>&since=1404996397`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -270,7 +270,7 @@ This endpoint should be used if you need to know about all updates to existing p
 
 
 #### Example request
-`GET https://walls.io/api/posts/changed.rss?access_token=<YOUR_ACCESS_TOKEN>&since=1404996397`
+`GET https://api.walls.io/v1/posts/changed.rss?access_token=<YOUR_ACCESS_TOKEN>&since=1404996397`
 
 
 ## GET api/posts/*{postId}*.json
@@ -278,7 +278,7 @@ This endpoint should be used if you need to know about all updates to existing p
 Returns a single post, specified by its Walls.io post id.
 
 #### Example request
-`GET https://walls.io/api/posts/17824236.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/posts/17824236.json?access_token=<YOUR_ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -333,7 +333,7 @@ You can perform multiple actions at once by setting multipe parameters.
 #### Example request
 ```bash
 curl -X PUT \
-  https://walls.io/api/posts/17181206.json \
+  https://api.walls.io/v1/posts/17181206.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&is_highlighted=1&status=1&language=en'
 ```
@@ -377,7 +377,7 @@ The response contains date strings in UTC and numeric UNIX timestamps in seconds
 #### Example request
 ```bash
 curl -X POST \
-  https://walls.io/api/posts.json \
+  https://api.walls.io/v1/posts.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&video=5bac9959-4b0c-4916-bc0e-00faac12000b&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
 ```
@@ -436,7 +436,7 @@ Upon successful upload this method will return an ID (see example response) whic
 #### Example request
 ```bash
 curl -X POST \
-  https://walls.io/api/media_upload.json \
+  https://api.walls.io/v1/media_upload.json \
   -H 'Content-Type: multipart/form-data' \
   -F access_token=<YOUR_ACCESS_TOKEN> \
   -F 'image=@/path/to/file/on/local/filesystem.jpg'
@@ -467,7 +467,7 @@ Adds a user to this Wall's blacklist. This essentially blocks a user from postin
 #### Example request
 ```bash
 curl -X POST \
-  https://walls.io/api/user_blacklist.json \
+  https://api.walls.io/v1/user_blacklist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
@@ -484,7 +484,7 @@ Removes a user from this Wall's blacklist. This is an undo of the [POST api/user
 #### Example request
 ```bash
 curl -X DELETE \
-  https://walls.io/api/user_blacklist.json \
+  https://api.walls.io/v1/user_blacklist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
@@ -501,7 +501,7 @@ Adds a user to this Wall's whitelist. All posts of whitelisted users are approve
 #### Example request
 ```bash
 curl -X POST \
-  https://walls.io/api/user_whitelist.json \
+  https://api.walls.io/v1/user_whitelist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
@@ -518,7 +518,7 @@ Removes a user from this Wall's whitelist. This is an undo of the [POST api/user
 #### Example request
 ```bash
 curl -X DELETE \
-  https://walls.io/api/user_whitelist.json \
+  https://api.walls.io/v1/user_whitelist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
@@ -536,7 +536,7 @@ Returns the number of posts per social networks on your wall. Also returns the t
 Inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) are ignored.
 
 #### Example request
-`GET https://walls.io/api/analytics/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/analytics/posts.json?access_token=<YOUR_ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -573,7 +573,7 @@ Returns the number of unique users that have posted on your wall, grouped by soc
 Users who only have inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) on your wall are ignored.
 
 #### Example request
-`GET https://walls.io/api/analytics/users.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/analytics/users.json?access_token=<YOUR_ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -606,7 +606,7 @@ Users who only have inactive posts (e.g. blacklisted posts or posts that were hi
 Returns a list of ads (Sponsored Posts) for a wall. Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts). The Wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
-`GET https://walls.io/api/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.
