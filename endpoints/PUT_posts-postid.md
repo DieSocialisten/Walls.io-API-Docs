@@ -1,6 +1,4 @@
-
-
-## PUT api/posts/*{postId}*.json
+# PUT `/posts/*{postId}*`
 
 Changes a single post's visibility status, highlighting, language, or spam status. The post is identified by its Walls.io post id.
 
