@@ -1,6 +1,8 @@
 # GET `/posts/{postId}`
 
-#### Get a single post, specified by its Walls.io post id
+#### Get a single post
+
+The post is identified by its Walls.io post id.
 
 ## Example request
 ```
