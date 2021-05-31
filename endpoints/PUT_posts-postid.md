@@ -13,7 +13,7 @@ You can perform multiple actions at once by setting multipe parameters.
 curl -X PUT \
   https://api.walls.io/v1/posts/17181206.json \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<YOUR_ACCESS_TOKEN>&is_highlighted=1&status=1&language=en'
+  -d 'access_token=<ACCESS_TOKEN>&is_highlighted=1&status=1&language=en'
 ```
 
 #### Parameters

@@ -3,7 +3,7 @@
 Returns a list of ads (Sponsored Posts) for a wall. Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts). The Wall is determined by the `access_token` that must be passed with the request.
 
 #### Example request
-`GET https://api.walls.io/v1/ads.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/ads.json?access_token=<ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.

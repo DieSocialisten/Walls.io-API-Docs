@@ -7,7 +7,7 @@ Adds a user to this Wall's blacklist. This essentially blocks a user from postin
 curl -X POST \
   https://api.walls.io/v1/user_blacklist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+  -d 'access_token=<ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
 
 #### Parameters

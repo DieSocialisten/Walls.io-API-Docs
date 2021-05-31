@@ -7,7 +7,7 @@ Removes a user from this Wall's whitelist. This is an undo of the [POST api/user
 curl -X DELETE \
   https://api.walls.io/v1/user_whitelist.json \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<YOUR_ACCESS_TOKEN>&network=twitter&post_user=123456'
+  -d 'access_token=<ACCESS_TOKEN>&network=twitter&post_user=123456'
 ```
 
 #### Parameters

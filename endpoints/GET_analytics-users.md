@@ -5,7 +5,7 @@ Returns the number of unique users that have posted on your wall, grouped by soc
 Users who only have inactive posts (e.g. blacklisted posts or posts that were hidden via your wall moderation backend) on your wall are ignored.
 
 #### Example request
-`GET https://api.walls.io/v1/analytics/users.json?access_token=<YOUR_ACCESS_TOKEN>`
+`GET https://api.walls.io/v1/analytics/users.json?access_token=<ACCESS_TOKEN>`
 
 #### Parameters
 - `access_token` *(required)*: Your Walls.io access token.

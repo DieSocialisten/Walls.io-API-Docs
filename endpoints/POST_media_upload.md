@@ -15,7 +15,7 @@ The response contains date strings in UTC and numeric UNIX timestamps in seconds
 curl -X POST \
   https://api.walls.io/v1/posts.json \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<YOUR_ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&video=5bac9959-4b0c-4916-bc0e-00faac12000b&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
+  -d 'access_token=<ACCESS_TOKEN>&text=Picture%20of%20a%20cat&image=https%3A%2F%2Furl.of.some%2Fother%2Fimage&video=5bac9959-4b0c-4916-bc0e-00faac12000b&user_name=Cat%20Facts&user_image=https%3A%2F%2Furl.of.some%2Fimage'
 ```
 
 #### Parameters
