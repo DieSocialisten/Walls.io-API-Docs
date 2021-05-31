@@ -9,6 +9,9 @@ Walls.io API Documentation
   * [__POST__ `/posts`] Add a new Native Post
   * [__PUT__ `/posts/{postId}`] Change a single post's visibility status, highlighting, language, or spam status
 
+- Media Upload
+  * [__POST__ `/posts/media_upload`] Upload an image or video which can then be used in [__POST__ `/posts`]
+
 - Post as RSS
   * [__GET__ `/posts.rss`] Get an RSS feed with the wall's posts
   * [__GET__ `/posts/changed.rss`] Get an RSS feed with the wall's posts, ordered by the time they were updated
@@ -19,6 +22,8 @@ Walls.io API Documentation
 [__GET__ `/posts/{postId}`]: endpoints/GET_posts-postid.md
 [__POST__ `/posts`]: endpoints/POST_posts.md
 [__PUT__ `/posts/{postId}`]: endpoints/PUT_posts-postid.md
+
+[__POST__ `/posts/media_upload`]: endpoints/POST_media_upload.md
 
 [__GET__ `/posts.rss`]: endpoints/GET_posts.rss.md
 [__GET__ `/posts/changed.rss`]: endpoints/GET_posts-changed.rss.md
