@@ -1,17 +1,19 @@
-## GET api/posts/*{postId}*.json
+# GET `/posts/{postId}`
 
-Returns a single post, specified by its Walls.io post id.
+#### Get a single post, specified by its Walls.io post id
 
-#### Example request
-`GET https://api.walls.io/v1/posts/17824236.json?access_token=<YOUR_ACCESS_TOKEN>`
+## Example request
+```
+GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
+```
 
-#### Parameters
+## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
-- `fields`: A comma-separated list of fields you would like to receive for each post. For a full list of possible fields see [the list of common fields](#common-post-fields).
-- `include_source`: Set this to `1` if you want the post to include the source that it came from.
+- `fields`: A comma-separated list of fields you would like to receive for each post. [Common Post Fields]
+- `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 
-#### Example response
+## Example response
 
 ```json
 {
@@ -46,3 +48,5 @@ Returns a single post, specified by its Walls.io post id.
   }
 }
 ```
+
+[Common Post Fields]: Common_Post_Fields.md "List of fields common to all posts endpoints"

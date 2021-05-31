@@ -5,7 +5,7 @@ Walls.io API Documentation
 - Posts
   * [__GET__ `/posts`] Get a list of posts
   * [__GET__ `/posts/changed`] Get a list of posts, ordered by the time they were updated
-  * [__GET__ ]
+  * [__GET__ `/posts/{postId}`] Get a single post
 - Post as RSS
   * [__GET__ `/posts.rss`] Get an RSS feed with the wall's posts
   * [__GET__ `/posts/changed.rss`] Get an RSS feed with the wall's posts, ordered by the time they were updated
@@ -13,6 +13,8 @@ Walls.io API Documentation
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
 [__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md
+[__GET__ `/posts/{postId}`]: endpoints/GET_posts-postid.md
+
 [__GET__ `/posts.rss`]: endpoints/GET_posts.rss.md
 [__GET__ `/posts/changed.rss`]: endpoints/GET_posts-changed.rss.md
 
