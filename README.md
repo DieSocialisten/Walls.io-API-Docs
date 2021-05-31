@@ -16,6 +16,10 @@ Walls.io API Documentation
   * [__GET__ `/posts.rss`] Get an RSS feed with the wall's posts
   * [__GET__ `/posts/changed.rss`] Get an RSS feed with the wall's posts, ordered by the time they were updated
 
+- Blacklist or whitelist users
+  * [__POST__ `/user_blacklist`](endpoints/POST_user_blacklist.md)
+    Add a user to this wall's blacklist
+
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
 [__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md
