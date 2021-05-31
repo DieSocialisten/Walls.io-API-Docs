@@ -1,6 +1,12 @@
 Walls.io API Documentation
 ==========================
 
+## Endpoints
+- Posts
+  * [__GET__ `/posts`] Get a list of posts
+
+[__GET__ `/posts`]: endpoints/GET_posts.md
+
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
   - [Common Post fields](#common-post-fields)
