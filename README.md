@@ -8,11 +8,13 @@ Walls.io API Documentation
   * [__GET__ ]
 - Post as RSS
   * [__GET__ `/posts.rss`] Get an RSS feed with the wall's posts
+  * [__GET__ `/posts/changed.rss`] Get an RSS feed with the wall's posts, ordered by the time they were updated
 
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
 [__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md
 [__GET__ `/posts.rss`]: endpoints/GET_posts.rss.md
+[__GET__ `/posts/changed.rss`]: endpoints/GET_posts-changed.rss.md
 
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
