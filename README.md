@@ -4,8 +4,11 @@ Walls.io API Documentation
 ## Endpoints
 - Posts
   * [__GET__ `/posts`] Get a list of posts
+  * [__GET__ `/posts/changed`] Get a list of posts, ordered by the time they were updated
+
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
+[__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md
 
 ## Contents
 - [Posts Endpoints](#posts-endpoints)
