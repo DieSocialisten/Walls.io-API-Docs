@@ -4,9 +4,9 @@
 
 These posts are ordered by `created`. If you need to access recently updated posts, use the [**GET** `/posts/changed`][GET /posts/changed] endpoint.
 
-This endpoint does **not** sort the posts by the date they were posted on their social networks, but in the order they arrive on the Walls.io server. 
-Those sortings can differ greatly, especially after you add a new hashtag or other source in your wall settings. 
-This is done deliberately so you can never miss any “old” postings that arrive on this endpoint. 
+This endpoint does **not** sort the posts by the date they were posted on their social networks, but in the order they arrive at the Walls.io server. 
+Those sorting can differ greatly, especially after you add a new hashtag or other source in your wall settings. 
+This is done deliberately, so you can never miss any “old” postings that arrive at this endpoint. 
 However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
 ## Example request
