@@ -7,6 +7,7 @@ Walls.io API Documentation
   * [__GET__ `/posts/changed`] Get a list of posts, ordered by the time they were updated
   * [__GET__ `/posts/{postId}`] Get a single post
   * [__POST__ `/posts`] Add a new Native Post
+  * [__PUT__ `/posts/{postId}`] Change a single post's visibility status, highlighting, language, or spam status
 
 - Post as RSS
   * [__GET__ `/posts.rss`] Get an RSS feed with the wall's posts
@@ -17,6 +18,7 @@ Walls.io API Documentation
 [__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md
 [__GET__ `/posts/{postId}`]: endpoints/GET_posts-postid.md
 [__POST__ `/posts`]: endpoints/POST_posts.md
+[__PUT__ `/posts/{postId}`]: endpoints/PUT_posts-postid.md
 
 [__GET__ `/posts.rss`]: endpoints/GET_posts.rss.md
 [__GET__ `/posts/changed.rss`]: endpoints/GET_posts-changed.rss.md

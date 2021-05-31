@@ -1,20 +1,23 @@
-# PUT `/posts/*{postId}*`
+# PUT `/posts/{postId}`
 
-Changes a single post's visibility status, highlighting, language, or spam status. The post is identified by its Walls.io post id.
+#### Change a single post's visibility status, highlighting, language, or spam status
 
-This endpoint allows you to perform most actions you can do in the "Posts" tab of your Wall's "Moderation" page. One notable exception is the "Block user" (or "Whitelist user") feature which is done via the [POST api/user_blacklist](#post-apiuser_blacklistjson) (or [POST api/user_whitelist](#post-apiuser_whitelistjson)) endpoint.
+The post is identified by its Walls.io post id.
 
-You can perform multiple actions at once by setting multipe parameters.
+This endpoint allows you to perform most actions you can do in the “Posts” tab of your Wall's “Moderation” page. 
+One notable exception are the “Block user” and “Whitelist user” features, which are done via the [**POST** `/user_blacklist`][POST /user_blacklist] and [**POST** `/user_whitelist`][POST /user_whitelist]) endpoints.
 
-#### Example request
+You can perform multiple actions at once by setting multiple parameters.
+
+## Example request
 ```bash
 curl -X PUT \
-  https://api.walls.io/v1/posts/17181206.json \
+  https://api.walls.io/v1/posts/17181206 \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'access_token=<ACCESS_TOKEN>&is_highlighted=1&status=1&language=en'
 ```
 
-#### Parameters
+## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 - `is_highlighted`: Set this to `1` if the post should be highlighted, or `0` to remove an existing highlight flag.
 - `status`: Set this to `1` to show a hidden post, or `0` to hide a visible post.
@@ -22,9 +25,9 @@ curl -X PUT \
 - `report_spam`: Set this to `1` to report this post for spam, or `0` to remove the spam status from a post that was incorrectly reported as spam.
 
 
-#### Example response
+## Example response
 
-```json
+```JsonC
 {
   "status": "success",
   "query": {
@@ -36,3 +39,6 @@ curl -X PUT \
   }
 }
 ```
+
+[POST /user_blacklist]: POST_user_blacklist.md "Blacklist a user"
+[POST /user_whitelist]: POST_user_whitelist.md "Whitelist a user"
