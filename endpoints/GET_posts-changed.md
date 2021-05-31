@@ -7,7 +7,7 @@ Every time an existing post is updated, it rises to the top of this endpoint's r
 
 ## Example request
 ```
-GET https://api.walls.io/v1/posts/changed.json?access_token=<ACCESS_TOKEN>&since=1404996397
+GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404996397
 ```
 
 ## Parameters
