@@ -33,6 +33,8 @@ Walls.io API Documentation
   * [__GET__ `/analytics/posts`](endpoints/GET_analytics-posts.md)
     Get the number of posts per social network on a wall
 
+  * [__GET__ `/analytics/users`](endpoints/GET_analytics-users.md)
+    Get the number of unique users that have posted on a wall
 
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
