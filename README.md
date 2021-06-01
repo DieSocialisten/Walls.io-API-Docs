@@ -36,6 +36,10 @@ Walls.io API Documentation
   * [__GET__ `/analytics/users`](endpoints/GET_analytics-users.md)
     Get the number of unique users that have posted on a wall
 
+### Ads / Sponsored Posts
+
+  * [__GET__ `/ads`](endpoints/GET_ads.md)
+    Get a list of ads (Sponsored Posts) for a wall
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
 [__GET__ `/posts/changed`]: endpoints/GET_posts-changed.md

@@ -1,23 +1,33 @@
-## GET api/ads.json
+# GET `/ads`
 
-Returns a list of ads (Sponsored Posts) for a wall. Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts). The Wall is determined by the `access_token` that must be passed with the request.
+Get a list of ads (Sponsored Posts) for a wall
 
-#### Example request
-`GET https://api.walls.io/v1/ads.json?access_token=<ACCESS_TOKEN>`
+Sponsored Posts are uploaded and managed in the Walls.io settings (Content / Sponsored Posts).
 
-#### Parameters
+## Example request
+```
+GET https://api.walls.io/v1/ads?access_token=<ACCESS_TOKEN>
+```
+
+## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 
-#### Example response
+## Example response
 ```json
 {
     "status": "success",
+    "count": 1,
     "data": [
         {
-            "id": "5767ed0e-290c-4926-ad42-042cac1facad",
+            "id": "1234567890",
             "image": "https:\/\/walls.io\/link\/to\/image.jpg",
-            "imageAspectRatio": 1.6,
-            "link": "https:\/\/www.facebook.com"
+            "imageWidth": 2000,
+            "imageHeight": 1335,
+            "imageAspectRatio": 1.4981273408239701,
+            "link": "https:\/\/www.facebook.com",
+            "text": "Hello World",
+            "userImage": null,
+            "userName": "My Name"
         }
     ]
 }
