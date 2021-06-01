@@ -1,6 +1,6 @@
 # POST `/user_whitelist`
 
-#### Add a user to this wall's whitelist. 
+#### Add a user to this wall's whitelist 
 
 All posts of whitelisted users are approved automatically and instantly appear on the wall, even if the wall is set to manual moderation.
 

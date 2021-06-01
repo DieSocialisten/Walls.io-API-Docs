@@ -19,8 +19,16 @@ Walls.io API Documentation
 - Blacklist or whitelist users
   * [__POST__ `/user_blacklist`](endpoints/POST_user_blacklist.md)
     Add a user to this wall's blacklist
-  * [__POST__ `/user_whitelsit`](endpoints/POST_user_whitelist.md)
+
+  * [__DELETE__ `/user_blacklist`](endpoints/DELETE_user_blacklist.md)
+    Remove a user from this wall's blacklist
+
+  * [__POST__ `/user_whitelist`](endpoints/POST_user_whitelist.md)
     Add a user to this wall's whitelist
+    
+  * [__DELETE__ `/user_whitelist`](endpoints/DELETE_user_whitelist.md)
+    Remove a user from this wall's whitelist
+
 
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
