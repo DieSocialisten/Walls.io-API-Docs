@@ -27,7 +27,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.
 - `created_timestamp`: Same as `created`, but as a UNIX timestamp.
-- `modified`: Ths date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io. The timezone is UTC.
+- `modified`: The date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io. The timezone is UTC.
 - `modified_timestamp`: Same as `modified`, but as a UNIX timestamp.
 - `userlink`: A link to the user's profile on the social network the post was posted to.
 - `location`: The name of the geographic position this post was created at, or `null` if none was set.
