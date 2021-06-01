@@ -4,6 +4,9 @@
 
 The post is identified by its Walls.io post id.
 
+> Did you know you can also use the [**GET** `/posts/changed`][GET /posts/changed] 
+> endpoint, to get all changed posts at once?
+
 ## Example request
 ```
 GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
@@ -52,3 +55,4 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
 ```
 
 [Common Post Fields]: Common_Post_Fields.md "List of fields common to all posts endpoints"
+[GET /posts/changed]: GET_posts-changed.md "Get a list of posts for a wall, ordered by the time they were updated"
