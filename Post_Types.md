@@ -1,4 +1,6 @@
-# Valid Post Types
+# Post Types
+
+The social network this post came from
 
 - `wallsio`: Native posts (posted directly on Walls.io)
 - `facebook`: Facebook
