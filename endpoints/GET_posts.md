@@ -91,4 +91,4 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 [GET /posts/changed]: GET_posts-changed.md "Get a list of posts for a wall, ordered by the time they were updated"
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
-[Post Types]: ../Post_Types.md "List of possible post types"
+[Post Types]: /Post_Types.md "List of possible post types"

@@ -8,20 +8,7 @@ All responses from the `/posts` endpoints share the same set of fields:
   - `text`: The selected text. Possible values are `"APPLY_NOW"`, `"BOOK_NOW"`, `"CONTACT_US"`, `"DOWNLOAD"`, `"LEARN_MORE"`, `"SHOP_NOW"`, and `"SIGN_UP"`. 
   - `url`: The URL/link of this CTA button
 - `language`: Language of the post as an ISO 639-1 language code
-- `type`: The post type. Possible types are:
-  - `"facebook"`
-  - `"flickr"`
-  - `"instagram"`
-  - `"messenger"`
-  - `"pinterest"`
-  - `"reddit"`
-  - `"rss"`
-  - `"tumblr"`
-  - `"twitter"`
-  - `"vimeo"`
-  - `"vkontakte"`
-  - `"wallsio"`
-  - `"youtube"`
+- `type`: The post type, e.g. `facebook` or `youtube` [Post Types]
 - `external_post_id`: The post's id in the social network it originated from.
 - `external_image`: The user's profile pic.
 - `external_name`: The user's screen name or handle.
@@ -46,3 +33,5 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `location`: The name of the geographic position this post was created at, or `null` if none was set.
 - `latitude`: The latitude this post was created at, or `null` if the position was not set.
 - `longitude`: The longitude this post was created at, or `null` if the position was not set.
+
+[Post Types]: /Post_Types.md "List of possible post types"
