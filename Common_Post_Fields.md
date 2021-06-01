@@ -33,7 +33,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_video_cdn`: Same as `post_video`, but served by our content delivery network.
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `post_link`: Same as `permalink`.
-- `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities. For a description of the Twitter entity format, see the [Twitter API docs].
+- `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities as received from the Twitter API.
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
 - `is_crosspost`: If this post was posted to multiple social networks at the same time, all posts that came after the original one contain `true` for this field. The original post contains `false`.
 - `is_highlighted`: `true` if the post has been highlighted by a moderator; `false` otherwise.
