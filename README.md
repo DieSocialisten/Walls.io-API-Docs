@@ -34,16 +34,17 @@ Calling our API 1-2 times per second is fine.
   * [__PUT__ `/posts/{postId}`](endpoints/PUT_posts-postid.md) Change a single post's visibility status, highlighting, language, or spam status
 
 
+#### Post as RSS
+
+* [__GET__ `/posts.rss`](endpoints/GET_posts.rss.md) Get an RSS feed with the wall's posts
+* [__GET__ `/posts/changed.rss`](endpoints/GET_posts-changed.rss.md) Get an RSS feed with the wall's posts, ordered by the time they were updated
+
+
 #### Media Upload
 
   * [__POST__ `/posts/media_upload`](endpoints/POST_media_upload.md) Upload an image or video which can then be used in [__POST__ `/posts`]
 
 [__POST__ `/posts`]: endpoints/POST_posts.md "Add a new Native Post"
-
-#### Post as RSS
-
-  * [__GET__ `/posts.rss`](endpoints/GET_posts.rss.md) Get an RSS feed with the wall's posts
-  * [__GET__ `/posts/changed.rss`](endpoints/GET_posts-changed.rss.md) Get an RSS feed with the wall's posts, ordered by the time they were updated
 
 
 #### Blacklist or whitelist users
