@@ -29,6 +29,10 @@ Walls.io API Documentation
   * [__DELETE__ `/user_whitelist`](endpoints/DELETE_user_whitelist.md)
     Remove a user from this wall's whitelist
 
+### Analytics
+  * [__GET__ `/analytics/posts`](endpoints/GET_analytics-posts.md)
+    Get the number of posts per social network on a wall
+
 
 
 [__GET__ `/posts`]: endpoints/GET_posts.md
