@@ -58,7 +58,7 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 }
 ```
 
-[Common Post Fields]: Common_Post_Fields.md "List of fields common to all posts endpoints"
+[Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
 [Post Types]: ../Post_Types.md "List of possible post types"

@@ -27,7 +27,7 @@ GET https://api.walls.io/v1/posts.rss?access_token=<ACCESS_TOKEN>`
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
-[Common Post Fields]: Common_Post_Fields.md "List of fields common to all posts endpoints"
+[Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"
 [GET /posts/changed.rss]: GET_posts-changed.md
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"

@@ -87,7 +87,7 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 }
 ```
 
-[Common Post Fields]: Common_Post_Fields.md "List of fields common to all posts endpoints"
+[Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"
 [GET /posts/changed]: GET_posts-changed.md "Get a list of posts for a wall, ordered by the time they were updated"
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
