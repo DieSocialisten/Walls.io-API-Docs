@@ -1,6 +1,21 @@
 Walls.io API Documentation
 ==========================
 
+API to access a Walls.io wall
+
+## General
+
+This is Walls.io API version `v1`.
+
+It's available to Walls.io premium users. [Premium plan](https://walls.io/features-and-pricing)
+
+All endpoints are prefixed with `https://api.walls.io/v1`.
+> **Example**: `/posts` would become `https://api.walls.io/v1/posts`
+
+All endpoints require a valid API access token. [Access Token](Access_Token.md)
+
+The API generally returns JSON result, but all endpoints also support the `.xml` extension.
+
 ## Endpoints
 - Posts
   * [__GET__ `/posts`] Get a list of posts
@@ -72,12 +87,7 @@ Walls.io API Documentation
   - [GET api/analytics/users.json](#get-apianalyticsusersjson)
   - [GET api/ads.json](#get-apiadsjson)
 
-
-All endpoints require a valid API access token. Find out how to get one in the [FAQs].
-
 > **Note**: It is not permitted to access our API directly from the browser, because this would expose your secret access token to the public. 
 >
 > Instead, call the API from your server and cache the posts there.
-
-All JSON endpoints also support the `.xml` extension.
 
