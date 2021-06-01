@@ -16,6 +16,12 @@ All endpoints require a valid API access token. [Access Token](Access_Token.md)
 
 The API generally returns JSON result, but all endpoints also support the `.xml` extension.
 
+
+## Rate limit
+
+We are rate limiting our API, but have very reasonable limits.
+Calling our API 1-2 times per second is fine.
+
 ## Endpoints
 - Posts
   * [__GET__ `/posts`] Get a list of posts
