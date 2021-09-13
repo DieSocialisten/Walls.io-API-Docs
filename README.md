@@ -12,7 +12,8 @@ It's available to Walls.io premium users. [Premium plan](https://walls.io/featur
 All endpoints are prefixed with `https://api.walls.io/v1`.
 > **Example**: `/posts` would become `https://api.walls.io/v1/posts`
 
-All endpoints require a valid API access token. [Access Token](Access_Token.md)
+All endpoints require a valid API access token. Learn how to obtain an [access token here](Access_Token.md). The Walls.io API currently does not support CORS. To avoid exposure of your access token, we don't recommend to use our API client-side / in the browser. Instead, use our API server-side or consider using a proxy.
+
 
 The API generally returns JSON result, but all endpoints also support the `.xml` extension.
 
