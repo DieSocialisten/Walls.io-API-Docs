@@ -7,7 +7,7 @@ API to access a Walls.io wall
 
 This is Walls.io API version `v1`.
 
-It's available to Walls.io premium users. [Premium plan](https://walls.io/features-and-pricing)
+It's available to Walls.io [Premium](https://walls.io/features-and-pricing) and [Large Event Pass](https://walls.io/features-and-pricing?type=event) users.
 
 All endpoints are prefixed with `https://api.walls.io/v1`.
 > **Example**: `/posts` would become `https://api.walls.io/v1/posts`
