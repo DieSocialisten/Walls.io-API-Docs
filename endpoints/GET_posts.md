@@ -2,7 +2,7 @@
 
 #### Get a list of posts
 
-These posts are ordered by `created`. If you need to access recently updated posts, use the [**GET** `/posts/changed`][GET /posts/changed] endpoint.
+These posts are ordered by `id` in descending order. If you need to access recently updated posts, use the [**GET** `/posts/changed`][GET /posts/changed] endpoint.
 
 This endpoint does **not** sort the posts by the date they were posted on their social networks, but in the order they arrive at the Walls.io server. 
 Those sorting can differ greatly, especially after you add a new hashtag or other source in your wall settings. 
