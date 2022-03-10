@@ -9,10 +9,6 @@ Those sorting can differ greatly, especially after you add a new hashtag or othe
 This is done deliberately, so you can never miss any “old” postings that arrive at this endpoint. 
 However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
-## Example request
-```
-GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1
-```
 
 ## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -27,6 +23,12 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 - `sort`: Order the result by any field, according to the [JSON:API specification]. You may provide several comma-separated fields. The sort order is ascending unless it's prefixed with a minus, in which case it is descending. E.g. `?sort=-external_fullname,comment` first sort by `external_fullname` in descending order, then by `comment` in ascending order. Default: `-id`.
+
+
+## Example request
+```
+GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1
+```
 
 
 ## Example response
