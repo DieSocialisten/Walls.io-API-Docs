@@ -26,6 +26,8 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 - `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
+- `sort`: Order the result by any field, according to the [JSON:API specification]. You may provide several comma-separated fields. The sort order is ascending unless it's prefixed with a minus, in which case it is descending. E.g. `?sort=-external_fullname,comment` first sort by `external_fullname` in descending order, then by `comment` in ascending order. Default: `-id`.
+
 
 ## Example response
 
@@ -92,3 +94,4 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
 [Post Types]: /Post_Types.md "List of possible post types"
+[JSON:API specification]: https://jsonapi.org/format/#fetching-sorting
