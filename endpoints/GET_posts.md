@@ -28,6 +28,7 @@ However, this order of posts is usually not what you want to display in your fro
 ## Example request
 ```
 GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1
+GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1&sort=-created,-id
 ```
 
 
