@@ -32,7 +32,7 @@ Calling our API 1-2 times per second is fine.
   * [__GET__ `/posts/changed`](endpoints/GET_posts-changed.md) Get a list of posts, ordered by the time they were updated
   * [__GET__ `/posts/{postId}`](endpoints/GET_posts-postid.md) Get a single post
   * [__POST__ `/posts`](endpoints/POST_posts.md) Add a new Native Post
-  * [__PUT__ `/posts/{postId}`](endpoints/PUT_posts-postid.md) Change a single post's visibility status, highlighting, language, or spam status
+  * [__PUT__ `/posts/{postId}`](endpoints/PUT_posts-postid.md) Change a single post's visibility status, pinned, language, or spam status
 
 
 #### Post as RSS

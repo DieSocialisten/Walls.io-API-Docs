@@ -17,7 +17,7 @@ GET https://api.walls.io/v1/analytics/users?access_token=<ACCESS_TOKEN>
 - `since`: Pass a UNIX timestamp to limit the result to posts that were posted after this time.
 - `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. [Media Types]
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
-- `highlighted_only`: Set this to `1` if you would only like to count posts that have been highlighted by a moderator.
+- `pinned_only`: Set this to `1` if you would only like to count posts that have been pinned to top by a moderator.
 - `include_inactive`: Per default, only active posts are counted. If you want to receive all posts, regardless of status, set this to `1`.
 
 ## Example response
