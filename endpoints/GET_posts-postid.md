@@ -41,7 +41,7 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
     "post_video":null,
     "twitter_entities": null,
     "twitter_retweet": false,
-    "is_pinned": false,
+    "is_highlighted": false,
     "status": true,
     "location": null,
     "latitude": "51.48247833300000",
