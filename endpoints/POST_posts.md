@@ -40,7 +40,7 @@ curl -X POST \
 - `latitude`: Latitude of the location where this post was created, as a `float`, e.g. `48.208`
 - `longitude`: Longitude of the location where this post was created, as a `float`, e.g. `16.367`
 - `scheduled_timestamp`: If set, the post is not added to the Wall's frontend right away but scheduled to be posted later. Must be a UNIX timestamp in seconds and must not be in the past.
-- `is_highlighted`: Set this to `1` if the post should be highlighted.
+- `is_pinned`: Set this to `1` if the post should be pinned to top.
 - `status`: Set this to `1` or `0` to force the visibility (a.k.a. "status") of the new post. Usually the status is determined by checking the post against the language filter, spam filter, and several blacklists and whitelists. All of those checks can be bypassed by explicitly setting the `status` field in this call.
 
 
