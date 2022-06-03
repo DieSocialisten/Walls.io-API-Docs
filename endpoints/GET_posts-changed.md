@@ -18,7 +18,7 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 - `types`: A comma-separated list of the types of posts you would like to receive. [Post Types]
 - `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. [Media Types]
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
-- `highlighted_only`: Set this to `1` if you would only like to receive posts that have been highlighted by a moderator.
+- `pinned_only`: Set this to `1` if you would only like to receive only posts that have been pinned to top by a moderator.
 - `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
@@ -40,7 +40,7 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
       "external_post_id": "769415235382107591_372993670",
       "external_user_id": "372993670",
       "is_crosspost": false,
-      "is_highlighted": false,
+      "is_pinned": false,
       "permalink": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
       "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/10560907_307861969392635_1595149027_n.jpg",
       "post_link": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
