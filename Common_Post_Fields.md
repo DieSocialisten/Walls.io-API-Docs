@@ -22,7 +22,6 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_link`: Same as `permalink`.
 - `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities as received from the Twitter API.
 - `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
-- `is_crosspost`: If this post was posted to multiple social networks at the same time, all posts that came after the original one contain `true` for this field. The original post contains `false`.
 - `is_pinned`: `true` if the post has been pinned to top by a moderator; `false` otherwise.
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.
@@ -33,5 +32,6 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `location`: The name of the geographic position this post was created at, or `null` if none was set.
 - `latitude`: The latitude this post was created at, or `null` if the position was not set.
 - `longitude`: The longitude this post was created at, or `null` if the position was not set.
+- `album_hash`: The value is the same for posts, which are coming from the same album (carousel)
 
 [Post Types]: /Post_Types.md "List of possible post types"
