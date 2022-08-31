@@ -39,7 +39,6 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
       "external_name": "getfitgenes",
       "external_post_id": "769415235382107591_372993670",
       "external_user_id": "372993670",
-      "is_crosspost": false,
       "is_pinned": false,
       "permalink": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
       "post_image": "http:\/\/scontent-a.cdninstagram.com\/hphotos-xfp1\/t51.2885-15\/10560907_307861969392635_1595149027_n.jpg",
