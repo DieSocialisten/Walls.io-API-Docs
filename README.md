@@ -17,6 +17,7 @@ All endpoints require a valid API access token. Learn how to obtain an [access t
 
 The API generally returns JSON result, but all endpoints also support the `.xml` extension.
 
+>The API will not include data from social networks that prohibit redistribution of API data via their terms of service.
 
 ## Rate limit
 

@@ -14,6 +14,8 @@ However, this order of posts is usually not what you want to display in your fro
 GET https://api.walls.io/v1/posts.rss?access_token=<ACCESS_TOKEN>`
 ```
 
+>The API will not include data from social networks that prohibit redistribution of API data via their terms of service.
+
 ## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 - `limit`: The maximum number of posts you would like to receive. The maximum limit is `1000`. Default: `50`.

@@ -9,6 +9,7 @@ Those sorting can differ greatly, especially after you add a new hashtag or othe
 This is done deliberately, so you can never miss any “old” postings that arrive at this endpoint. 
 However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
+>The API will not include data from social networks that prohibit redistribution of API data via their terms of service.
 
 ## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
