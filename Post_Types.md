@@ -12,7 +12,6 @@ The social network this post came from
 - `reddit`: Reddit
 - `rss`: RSS
 - `tumblr`: Tumblr
-- `twitter`: Twitter
 - `vimeo`: Vimeo
 - `vkontakte`: VK
 - `youtube`: YouTube
