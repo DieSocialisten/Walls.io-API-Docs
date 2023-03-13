@@ -20,8 +20,6 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_video_cdn`: Same as `post_video`, but served by our content delivery network.
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `post_link`: Same as `permalink`.
-- `twitter_entities`: If the post type is `twitter`, this field contains an array of Twitter entities as received from the Twitter API.
-- `twitter_retweet`: If the post type is `twitter` and the post is a retweet, this field contains `true`.
 - `is_pinned`: `true` if the post has been pinned to top by a moderator; `false` otherwise.
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.

@@ -39,8 +39,6 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
     "post_image": "http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/10499125_748994368486318_763693636_n.jpg",
     "post_link": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
     "post_video":null,
-    "twitter_entities": null,
-    "twitter_retweet": false,
     "is_pinned": false,
     "status": true,
     "location": null,

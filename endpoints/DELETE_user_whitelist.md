@@ -10,7 +10,7 @@ This is an undo of the [__POST__ `/user_whitelist`][POST /user_whitelist] method
 curl -X DELETE \
   https://api.walls.io/v1/user_whitelist \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'access_token=<ACCESS_TOKEN>&network=twitter&external_user_id=123456'
+  -d 'access_token=<ACCESS_TOKEN>&network=facebook&external_user_id=123456'
 ```
 
 ## Parameters

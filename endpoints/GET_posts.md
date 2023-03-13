@@ -9,6 +9,7 @@ Those sorting can differ greatly, especially after you add a new hashtag or othe
 This is done deliberately, so you can never miss any “old” postings that arrive at this endpoint. 
 However, this order of posts is usually not what you want to display in your frontend, so make sure to implement your own post sorting logic.
 
+>The API will not include data from social networks that prohibit redistribution of API data via their terms of service.
 
 ## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
@@ -39,54 +40,52 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
   "status":"success",
   "data":[
     {
-      "id":"146670",
-      "comment":"3 days and no #Starbucks \n\n#feinding",
+      "id": "146670",
+      "type": "facebook",
+      "album_hash": "d6a080f55dede1112d63975645646Vfr",
+      "comment": "Spring means coffee and nursery dates. 🌿",
       "cta": {
         "text": "SHOP_NOW",
         "url": "https://walls.io"
       },
-      "type":"twitter",
-      "external_image":"http:\/\/pbs.twimg.com\/profile_images\/471635099977408512\/cWPhJJWz_normal.jpeg",
-      "external_name":"LOWERERWICK",
-      "external_fullname":"Marko 9TOOTH",
-      "external_user_id":"123456",
-      "post_image":"",
-      "post_link":"https:\/\/twitter.com\/LOWERERWICK\/status\/487213557436518400",
-      "post_video":null,
-      "twitter_entities":"{\"hashtags\":[{\"text\":\"Starbucks\",\"indices\":[14,24]},{\"text\":\"feinding\",\"indices\":[27,36]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
-      "twitter_retweet":false,
-      "is_pinned":false,
-      "status":true,
-      "created":"2014-07-10 14:35:38",
-      "modified":"2014-07-10 14:35:39",
-      "permalink":"https:\/\/twitter.com\/LOWERERWICK\/status\/487213557436518400",
-      "userlink":"https:\/\/www.twitter.com\/LOWERERWICK",
-      "location": "Knottingley",
-      "latitude": "53.69547100000000",
-      "longitude": "-1.25397500000000"
+      "external_fullname": "Starbucks",
+      "external_image": "https:\/\/scontent.fist6-2.fna.fbcdn.net\/v\/t1.6435-1\/123456_1234567_4295515389661544448_n.png",
+      "external_image_cdn": "https:\/\/d3pelj80y5v5k4.cloudfront.net\/35bce284-321b-4dfb-b9c9-782a51251c92",
+      "external_post_id": "123456",
+      "external_user_id": "123456",
+      "is_marked_as_spam": false,
+      "is_pinned": false,
+      "permalink": "https:\/\/www.facebook.com\/123456\/posts\/123456",
+      "post_image": "https:\/\/scontent-fra5-2.xx.fbcdn.net\/v\/t39.30808-6\/123456_123456_2587047266154587271_n.png",
+      "post_image_cdn": "https:\/\/d3pelj80y5v5k4.cloudfront.net\/139219be-5d11-42f1-8ce8-8bff39ba293f",
+      "post_link": "https:\/\/www.facebook.com\/123456\/posts\/123456",
+      "status": true,
+      "userlink": "https:\/\/www.facebook.com\/123456",
+      "created": "2023-03-09 16:00:00",
+      "created_timestamp": 1678377600,
+      "modified": "2023-03-10 13:12:21",
+      "modified_timestamp": 1678453941
     },
     {
-      "id":"146661",
-      "comment":"According to #starbucks my name is #howard... #thatsnotmyname #starbucksfail",
-      "type":"twitter",
-      "external_image":"http:\/\/pbs.twimg.com\/profile_images\/378800000483014192\/cc7de90a32652e99b6716bda6e656481_normal.jpeg",
-      "external_name":"TakeMe2TheRyan",
-      "external_fullname":"Ryan Caruso",
-      "external_user_id":"234567",
-      "post_image":"",
-      "post_link":"https:\/\/twitter.com\/TakeMe2TheRyan\/status\/487213383762989056",
-      "post_video":null,
-      "twitter_entities":"{\"hashtags\":[{\"text\":\"starbucks\",\"indices\":[13,23]},{\"text\":\"howard\",\"indices\":[35,42]},{\"text\":\"thatsnotmyname\",\"indices\":[46,61]},{\"text\":\"starbucksfail\",\"indices\":[62,76]}],\"trends\":[],\"urls\":[],\"user_mentions\":[],\"symbols\":[]}",
-      "twitter_retweet":false,
-      "is_pinned":false,
-      "status":true,
-      "created":"2014-07-10 14:34:57",
-      "modified":"2014-07-10 14:34:57",
-      "permalink":"https:\/\/twitter.com\/TakeMe2TheRyan\/status\/487213383762989056",
-      "userlink":"https:\/\/www.twitter.com\/TakeMe2TheRyan",
-      "location": null,
-      "latitude": null,
-      "longitude": null
+      "id": "1466705",
+      "type": "facebook",
+      "comment": "FYI just because it's not the holidays anymore doesn't mean you still can't get a little treat with your coffee. 😉🍪",
+      "external_fullname": "Starbucks",
+      "external_image": "https:\/\/scontent-sea1-1.xx.fbcdn.net\/v\/t1.6435-1\/55680146_123456_123456_n.png",
+      "external_image_cdn": "https:\/\/d3pelj80y5v5k4.cloudfront.net\/926fc6e1-2dbe-49b5-a785-0b343e052218",
+      "external_post_id": "123456",
+      "external_user_id": "123456",
+      "is_marked_as_spam": false,
+      "is_pinned": false,
+      "language": "en",
+      "permalink": "https:\/\/www.facebook.com\/123456\/posts\/123456",
+      "post_link": "https:\/\/www.facebook.com\/123456\/posts\/123456",
+      "status": true,
+      "userlink": "https:\/\/www.facebook.com\/123456",
+      "created": "2023-01-11 16:00:05",
+      "created_timestamp": 1673452805,
+      "modified": "2023-03-10 12:42:29",
+      "modified_timestamp": 1678452149
     }
   ]
 }

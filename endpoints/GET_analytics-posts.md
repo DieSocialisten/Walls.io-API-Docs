@@ -27,13 +27,12 @@ GET https://api.walls.io/v1/analytics/posts?access_token=<ACCESS_TOKEN>
 {
   "status": "success",
   "data": {
-    "twitter": 463,
     "instagram": 395,
     "flickr": 125,
     "facebook": 83,
     "youtube": 72,
     "googleplus": 60,
-    "total": 1198
+    "total": 735
   }
 }
 ```
