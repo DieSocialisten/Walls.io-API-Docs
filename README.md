@@ -44,7 +44,7 @@ Calling our API 1-2 times per second is fine.
 
 #### Media Upload
 
-  * [__POST__ `/posts/media_upload`](endpoints/POST_media_upload.md) Upload an image or video which can then be used in [__POST__ `/posts`]
+  * [__POST__ `/media_upload`](endpoints/POST_media_upload.md) Upload an image or video which can then be used in [__POST__ `/posts`]
 
 [__POST__ `/posts`]: endpoints/POST_posts.md "Add a new Native Post"
 
