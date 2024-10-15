@@ -38,6 +38,7 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
     "external_user_id": "22059933",
     "post_image": "http:\/\/scontent-b.cdninstagram.com\/hphotos-xpa1\/t51.2885-15\/10499125_748994368486318_763693636_n.jpg",
     "post_link": "http:\/\/instagram.com\/p\/qtg9jrTRtz\/",
+    "post_link_wallsio": "https://my.walls.io/s/1DD",
     "post_video":null,
     "is_pinned": false,
     "status": true,
