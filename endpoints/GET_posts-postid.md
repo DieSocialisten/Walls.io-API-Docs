@@ -41,6 +41,7 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
     "post_link_wallsio": "https://my.walls.io/s/1DD",
     "post_video":null,
     "is_pinned": false,
+    "sentiment": "neutral",
     "status": true,
     "location": null,
     "latitude": "51.48247833300000",
