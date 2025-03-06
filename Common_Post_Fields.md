@@ -22,6 +22,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_link`: Same as `permalink`.
 - `post_link_wallsio`: The link of this post on the Wall.
 - `is_pinned`: `true` if the post has been pinned to top by a moderator; `false` otherwise.
+- `sentiment`: The sentiment of the post. Possible values are `"positive"`, `"neutral"`, `"negative"`, and `null`.
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.
 - `created_timestamp`: Same as `created`, but as a UNIX timestamp.
