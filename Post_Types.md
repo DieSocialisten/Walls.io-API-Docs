@@ -14,5 +14,4 @@ The social network this post came from
 - `rss`: RSS
 - `tumblr`: Tumblr
 - `vimeo`: Vimeo
-- `vkontakte`: VK
 - `youtube`: YouTube
