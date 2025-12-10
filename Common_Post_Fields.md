@@ -17,7 +17,7 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_image`: The (user-generated) image that was added to this post. If there is also a `post_video`, the `post_image` is usually a preview image of the video.
 - `post_image_cdn`: Same as `post_image`, but served by our content delivery network.
 - `post_video`: The video that was added to this post.
-- `post_video_cdn`: Same as `post_video`, but served by our content delivery network.
+- `post_video_cdn`: Same as `post_video`~, but served by our content delivery network~ (this field is deprecated).
 - `permalink`: The permalink of this post on the social network it was posted to.
 - `post_link`: Same as `permalink`.
 - `post_link_wallsio`: The link of this post on the Wall.
