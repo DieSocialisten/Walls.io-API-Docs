@@ -1,13 +1,13 @@
 Walls.io API Documentation
 ==========================
 
-API to access a Walls.io wall
+API to access a Walls.io wall. 
+
+Please check our pricing and plans at [walls.io/pricing](https://walls.io/pricing) for API availability.
 
 ## General
 
 This is Walls.io API version `v1`.
-
-It's available to all Walls.io users who have purchased the API & Zapier Pack.
 
 All endpoints are prefixed with `https://api.walls.io/v1`.
 > **Example**: `/posts` would become `https://api.walls.io/v1/posts`
