@@ -66,3 +66,8 @@ Calling our API 1-2 times per second is fine.
 #### Ads / Sponsored Posts
 
   * [__GET__ `/ads`](endpoints/GET_ads.md) Get a list of ads (Sponsored Posts) for a wall
+
+
+#### Leads
+
+  * [__GET__ `/leads`](endpoints/GET_leads.md) Get a list of collected leads
