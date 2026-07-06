@@ -20,7 +20,6 @@ This endpoint requires a wall with **API access** and the **Interactivity Pack**
 - `name`: The name the lead submitted.
 - `location`: The location the lead submitted.
 - `verified`: `true` if the lead's email address has been verified, otherwise `false`.
-- `wall_id`: The id of the wall on which the lead was collected.
 - `created`: The date and time at which the lead was collected, in ISO 8601 format (UTC), e.g. `2026-06-30T14:22:10+00:00`.
 - `custom_fields`: An object containing any custom lead-form fields configured for the wall, keyed by field name, with the value submitted by the lead.
 
@@ -42,7 +41,6 @@ GET https://api.walls.io/v1/leads?access_token=<ACCESS_TOKEN>&fields=id,email,na
       "name": "Jane Doe",
       "location": "Vienna, Austria",
       "verified": true,
-      "wall_id": "98765",
       "created": "2026-06-30T14:22:10+00:00",
       "custom_fields": {
         "company": "Example GmbH",
@@ -55,7 +53,6 @@ GET https://api.walls.io/v1/leads?access_token=<ACCESS_TOKEN>&fields=id,email,na
       "name": "John Smith",
       "location": "Berlin, Germany",
       "verified": false,
-      "wall_id": "98765",
       "created": "2026-06-30T15:03:41+00:00",
       "custom_fields": {
         "company": "Acme Inc.",
