@@ -1,6 +1,6 @@
 # PUT `/posts/{postId}`
 
-#### Change a single post's visibility status, pinned, language, or spam status
+#### Show or hide a single post, pin it, or change its language
 
 The post is identified by its Walls.io post id.
 
@@ -22,7 +22,6 @@ curl -X PUT \
 - `is_pinned`: Set this to `1` if the post should be pinned to top, or `0` to remove that flag.
 - `status`: Set this to `1` to show a hidden post, or `0` to hide a visible post.
 - `language`: Set this to change the language of a post. The language is passed as a two-letter ISO 639-1 language code. You can also remove a post's language completely by passing an empty string. To find out which languages are supported by the Walls.io API simply set this to a random value; the response will contain a list of all valid language codes.
-- `report_spam`: Set this to `1` to report this post for spam, or `0` to remove the spam status from a post that was incorrectly reported as spam.
 
 
 ## Example response
