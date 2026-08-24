@@ -1,6 +1,6 @@
 # PUT `/posts/{postId}`
 
-#### Change a single post's visibility status, pinned, or language
+#### Show or hide a single post, pin it, or change its language
 
 The post is identified by its Walls.io post id.
 
