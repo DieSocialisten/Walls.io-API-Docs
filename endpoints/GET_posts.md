@@ -21,15 +21,15 @@ However, this order of posts is usually not what you want to display in your fro
 - `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. [Media Types]
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
 - `pinned_only`: Set this to `1` if you would only like to receive posts that have been pinned to top by a moderator.
-- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `state`: A comma-separated list of the states of posts you would like to receive. Default: `visible`. [Post States]
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 - `sort`: Order the result by any field, according to the [JSON:API specification]. You may provide several comma-separated fields. The sort order is ascending unless it's prefixed with a minus, in which case it is descending. E.g. `?sort=-external_fullname,comment` first sort by `external_fullname` in descending order, then by `comment` in ascending order. Default: `-id`.
 
 
 ## Example request
 ```
-GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1
-GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&include_inactive=1&sort=-created,-id
+GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&state=visible,hidden
+GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,type&limit=10&state=visible,hidden&sort=-created,-id
 ```
 
 
@@ -100,4 +100,5 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
 [Post Types]: /Post_Types.md "List of possible post types"
+[Post States]: /Post_States.md "List of possible post states"
 [JSON:API specification]: https://jsonapi.org/format/#fetching-sorting

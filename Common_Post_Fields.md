@@ -24,6 +24,8 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `is_pinned`: `true` if the post has been pinned to top by a moderator; `false` otherwise.
 - `sentiment`: The sentiment of the post. Possible values are `"positive"`, `"neutral"`, `"negative"`, and `null`.
 - `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States] Only on walls with the new moderation.
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched. Only on walls with the new moderation.
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.
 - `created_timestamp`: Same as `created`, but as a UNIX timestamp.
 - `modified`: The date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io. The timezone is UTC.
@@ -35,3 +37,4 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `album_hash`: The value is the same for posts, which are coming from the same album (carousel)
 
 [Post Types]: /Post_Types.md "List of possible post types"
+[Post States]: /Post_States.md "List of possible post states"
