@@ -41,7 +41,10 @@ curl -X POST \
 - `longitude`: Longitude of the location where this post was created, as a `float`, e.g. `16.367`
 - `scheduled_timestamp`: If set, the post is not added to the Wall's frontend right away but scheduled to be posted later. Must be a UNIX timestamp in seconds and must not be in the past.
 - `is_pinned`: Set this to `1` if the post should be pinned to top.
-- `status`: Set this to `1` or `0` to force the visibility (a.k.a. "status") of the new post. Usually the status is determined by checking the post against the language filter, spam filter, and several blacklists and whitelists. All of those checks can be bypassed by explicitly setting the `status` field in this call.
+- `state`: Set this to `visible`, `hidden` or `review` to decide the new post's state yourself, as a moderator would. Without it the Wall's filters decide: the language filter, the spam filter, the block and allow lists and, if the Wall uses them, the AI checks. With it all of those checks are skipped and the post gets your state right away. [Post States] Only on walls with the new moderation.
+- `status` *(deprecated, removed on March 1, 2027)*: The old spelling of `state`: `1` is `state=visible`, `0` is `state=hidden`. Use `state` instead. Sending both with different meanings returns a `400`.
+
+On a Wall with AI moderation or the AI image filter, a post sent without `state` is checked first: the response shows it with `"status": false`, and it gets its final state a few seconds later.
 
 
 ## Example response
@@ -65,3 +68,4 @@ curl -X POST \
 
 [POST /media_upload]: POST_media_upload.md "Upload videos via our API"
 [Languages]: ../Languages.md "List of possible languages and language codes"
+[Post States]: ../Post_States.md "List of possible post states"
