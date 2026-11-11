@@ -22,6 +22,7 @@ However, this order of posts is usually not what you want to display in your fro
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
 - `pinned_only`: Set this to `1` if you would only like to receive posts that have been pinned to top by a moderator.
 - `state`: A comma-separated list of the states of posts you would like to receive. Default: `visible`. [Post States]
+- `include_inactive` *(deprecated, removed on March 1, 2027)*: Set this to `1` to receive posts in every state. Use `state` instead, e.g. `state=visible,review,hidden,trashed`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 - `sort`: Order the result by any field, according to the [JSON:API specification]. You may provide several comma-separated fields. The sort order is ascending unless it's prefixed with a minus, in which case it is descending. E.g. `?sort=-external_fullname,comment` first sort by `external_fullname` in descending order, then by `comment` in ascending order. Default: `-id`.
 
