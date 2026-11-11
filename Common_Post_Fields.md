@@ -23,9 +23,15 @@ All responses from the `/posts` endpoints share the same set of fields:
 - `post_link_wallsio`: The link of this post on the Wall.
 - `is_pinned`: `true` if the post has been pinned to top by a moderator; `false` otherwise.
 - `sentiment`: The sentiment of the post. Possible values are `"positive"`, `"neutral"`, `"negative"`, and `null`.
+<<<<<<< HEAD
 - `status` *(deprecated, removed on March 1, 2027)*: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active. Use `state` instead: `true` is the same as `state` being `visible`.
 - `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States] Only on walls with the new moderation.
 - `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched. Only on walls with the new moderation.
+=======
+- `status`: Whether this post is active (visible) or inactive (invisible) on the Wall. Contains `true` if it is active.
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+>>>>>>> vk-WI-9289-document-state-filter-and-fields
 - `created`: The date and time when this post was created in the social network it was posted to. The timezone is UTC.
 - `created_timestamp`: Same as `created`, but as a UNIX timestamp.
 - `modified`: The date and time of the last modification of this `Post` object. This can be used to update existing posts, for example if their status was changed on Walls.io. The timezone is UTC.

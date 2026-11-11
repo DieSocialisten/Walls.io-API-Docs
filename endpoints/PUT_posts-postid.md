@@ -20,7 +20,7 @@ curl -X PUT \
 ## Parameters
 - `access_token` *(required)*: Your Walls.io access token.
 - `is_pinned`: Set this to `1` if the post should be pinned to top, or `0` to remove that flag.
-- `state`: The state to put the post into, like the buttons in the Moderation page. [Post States] Only on walls with the new moderation.
+- `state`: The state to put the post into, like the buttons in the Moderation page. [Post States]
   - `visible` shows the post, `hidden` hides it. This is your decision as a moderator: it stays until you change it, whatever the Wall's filters say.
   - `review` moves the post to "Needs review" until you decide.
   - `trashed` moves the post to the trash. If the Wall deletes trashed posts after 30 days, this deletes the post for good. Posts created via [**POST** `/posts`][POST /posts] and polls can't be trashed; the call returns a `400`.

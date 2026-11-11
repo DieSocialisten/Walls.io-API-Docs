@@ -1,6 +1,6 @@
 # Post States
 
-Every post is in exactly one moderation state. Use the `state` parameter to choose which states an endpoint returns or counts. Default: `visible`. The parameter and the `state` and `state_reason` fields are available on walls with the new moderation.
+Every post is in exactly one moderation state. Use the `state` parameter to choose which states an endpoint returns or counts. Default: `visible`.
 
 - `visible`: Shown on the Wall.
 - `review`: Held back until a moderator decides.
