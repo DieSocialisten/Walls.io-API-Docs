@@ -19,6 +19,7 @@ GET https://api.walls.io/v1/analytics/posts?access_token=<ACCESS_TOKEN>
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
 - `pinned_only`: Set this to `1` if you would only like to count posts that have been pinned to top by a moderator.
 - `state`: A comma-separated list of the states of posts you would like to be counted. Default: `visible`. [Post States]
+- `include_inactive` *(deprecated, removed on March 1, 2027)*: Set this to `1` to count posts in every state. Use `state` instead, e.g. `state=visible,review,hidden,trashed`.
 
 
 ## Example response

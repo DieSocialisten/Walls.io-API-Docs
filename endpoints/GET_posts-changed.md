@@ -20,6 +20,7 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
 - `pinned_only`: Set this to `1` if you would only like to receive only posts that have been pinned to top by a moderator.
 - `state`: A comma-separated list of the states of posts you would like to receive. Default: `visible`. [Post States]
+- `include_inactive` *(deprecated, removed on March 1, 2027)*: Set this to `1` to receive posts in every state. Use `state` instead, e.g. `state=visible,review,hidden,trashed`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 #### Example response
