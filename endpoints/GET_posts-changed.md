@@ -19,7 +19,7 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 - `media_types`: A comma-separated list of media types. Use this if you want to limit your query to text-only posts, or video posts, or image posts, or any combination of those. [Media Types]
 - `languages`: A comma-separated list of ISO 639-1 language codes. Only posts with a `comment` in one of these languages will be included in the response. [Languages]
 - `pinned_only`: Set this to `1` if you would only like to receive only posts that have been pinned to top by a moderator.
-- `include_inactive`: Per default, only active posts are returned. If you want to receive all posts, regardless of status, set this to `1`.
+- `state`: A comma-separated list of the states of posts you would like to receive. Default: `visible`. [Post States]
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 #### Example response
@@ -62,3 +62,4 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Media Types]: ../Media_Types.md "List of media types"
 [Post Types]: ../Post_Types.md "List of possible post types"
+[Post States]: ../Post_States.md "List of possible post states"
