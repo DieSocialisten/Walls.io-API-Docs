@@ -23,6 +23,16 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
 - `include_inactive` *(deprecated, removed on March 1, 2027)*: Set this to `1` to receive posts in every state. Use `state` instead, e.g. `state=visible,review,hidden,trashed`.
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
+## Moderation state in the response
+
+Each post tells you its moderation state:
+
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+- `status` *(deprecated, removed on March 1, 2027)*: Contains `true` if the post is visible on the Wall. Use `state` instead: `true` is the same as `state` being `visible`.
+
+All other fields are described in [Common Post Fields].
+
 #### Example response
 
 ```json
@@ -46,6 +56,8 @@ GET https://api.walls.io/v1/posts/changed?access_token=<ACCESS_TOKEN>&since=1404
       "post_link": "http:\/\/instagram.com\/p\/qtgxR9uV3H\/",
       "post_video":null,
       "sentiment": "positive",
+      "state": "visible",
+      "state_reason": [],
       "status": true,
       "type": "instagram",
       "userlink": "http:\/\/instagram.com\/getfitgenes",

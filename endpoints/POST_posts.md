@@ -47,9 +47,19 @@ curl -X POST \
 On a Wall with AI moderation or the AI image filter, a post sent without `state` is checked first: the response shows it with `"status": false`, and it gets its final state a few seconds later.
 
 
+## Moderation state in the response
+
+When the post is added right away, `result` holds the new post with its moderation state. A scheduled post has no `result` yet, and a post that is still being checked (see above) is not in its final state yet.
+
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+- `status` *(deprecated, removed on March 1, 2027)*: Contains `true` if the post is visible on the Wall. Use `state` instead: `true` is the same as `state` being `visible`.
+
+All other fields are described in [Common Post Fields].
+
 ## Example response
 
-```json
+```JsonC
 {
   "status": "success",
   "info": [],
@@ -61,7 +71,16 @@ On a Wall with AI moderation or the AI image filter, a post sent without `state`
     "user_image": "https://url.of.some/image",
     "user_name": "Cat Facts",
     "posted_at": "2017-09-15 10:08:23",
-    "posted_timestamp": 1505470103
+    "posted_timestamp": 1505470103,
+    "result": {
+      "id": "17181207",
+      "type": "wallsio",
+      "comment": "Picture of a cat",
+      "state": "visible",
+      "state_reason": [],
+      "status": true
+      // ... and the other fields of the new post
+    }
   }
 }
 ```
@@ -69,3 +88,4 @@ On a Wall with AI moderation or the AI image filter, a post sent without `state`
 [POST /media_upload]: POST_media_upload.md "Upload videos via our API"
 [Languages]: ../Languages.md "List of possible languages and language codes"
 [Post States]: ../Post_States.md "List of possible post states"
+[Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"

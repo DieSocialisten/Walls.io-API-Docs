@@ -29,6 +29,16 @@ curl -X PUT \
 - `language`: Set this to change the language of a post. The language is passed as a two-letter ISO 639-1 language code. You can also remove a post's language completely by passing an empty string. To find out which languages are supported by the Walls.io API simply set this to a random value; the response will contain a list of all valid language codes.
 
 
+## Moderation state in the response
+
+The response returns the updated post with its moderation state:
+
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+- `status` *(deprecated, removed on March 1, 2027)*: Contains `true` if the post is visible on the Wall. Use `state` instead: `true` is the same as `state` being `visible`.
+
+All other fields are described in [Common Post Fields].
+
 ## Example response
 
 ```JsonC
@@ -39,7 +49,13 @@ curl -X PUT \
   },
   "current_time": 1408954568,
   "data": {
-    // ... the full updated post
+    "id": "17181206",
+    "is_pinned": true,
+    "language": "en",
+    "state": "visible",
+    "state_reason": ["manual_state"],
+    "status": true
+    // ... and the other fields of the updated post
   }
 }
 ```
@@ -48,3 +64,4 @@ curl -X PUT \
 [POST /user_whitelist]: POST_user_whitelist.md "Whitelist a user"
 [POST /posts]: POST_posts.md "Add a new Native Post"
 [Post States]: ../Post_States.md "List of possible post states"
+[Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"

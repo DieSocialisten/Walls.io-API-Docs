@@ -18,6 +18,16 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
 - `include_source`: Set this to `1` if you want each post to include the source that it came from.
 
 
+## Moderation state in the response
+
+The post tells you its moderation state:
+
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+- `status` *(deprecated, removed on March 1, 2027)*: Contains `true` if the post is visible on the Wall. Use `state` instead: `true` is the same as `state` being `visible`.
+
+All other fields are described in [Common Post Fields].
+
 ## Example response
 
 ```json
@@ -42,6 +52,8 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
     "post_video":null,
     "is_pinned": false,
     "sentiment": "neutral",
+    "state": "visible",
+    "state_reason": [],
     "status": true,
     "location": null,
     "latitude": "51.48247833300000",
@@ -55,4 +67,5 @@ GET https://api.walls.io/v1/posts/17181206?access_token=<ACCESS_TOKEN>
 ```
 
 [Common Post Fields]: /Common_Post_Fields.md "List of fields common to all posts endpoints"
+[Post States]: ../Post_States.md "List of possible post states"
 [GET /posts/changed]: GET_posts-changed.md "Get a list of posts for a wall, ordered by the time they were updated"
