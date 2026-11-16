@@ -34,6 +34,16 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
 ```
 
 
+## Moderation state in the response
+
+Each post tells you its moderation state:
+
+- `state`: The moderation state of the post: `visible`, `review`, `hidden` or `trashed`. [Post States]
+- `state_reason`: Why the post is in that state, as a list of reason codes (for example `["spam", "language"]`, or `["manual_state"]` when a moderator decided). Empty for a visible post that no rule touched.
+- `status` *(deprecated, removed on March 1, 2027)*: Contains `true` if the post is visible on the Wall. Use `state` instead: `true` is the same as `state` being `visible`.
+
+All other fields are described in [Common Post Fields].
+
 ## Example response
 
 ```json
@@ -62,6 +72,8 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
       "post_link": "https:\/\/www.facebook.com\/123456\/posts\/123456",
       "post_link_wallsio": "https://my.walls.io/s/1SH",
       "sentiment": "positive",
+      "state": "visible",
+      "state_reason": [],
       "status": true,
       "userlink": "https:\/\/www.facebook.com\/123456",
       "created": "2023-03-09 16:00:00",
@@ -85,7 +97,9 @@ GET https://api.walls.io/v1/posts?access_token=<ACCESS_TOKEN>&fields=id,comment,
       "post_link": "https:\/\/www.facebook.com\/123456\/posts\/123456",
       "post_link_wallsio": "https://my.walls.io/s/1KK",
       "sentiment": "neutral",
-      "status": true,
+      "state": "hidden",
+      "state_reason": ["manual_state"],
+      "status": false,
       "userlink": "https:\/\/www.facebook.com\/123456",
       "created": "2023-01-11 16:00:05",
       "created_timestamp": 1673452805,
